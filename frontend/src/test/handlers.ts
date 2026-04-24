@@ -30,10 +30,23 @@ export interface MealFixture {
   food_per_100g: Record<string, number>;
 }
 
+export interface ExerciseFixture {
+  id: string;
+  day: string;
+  activity: string;
+  duration_minutes: number | null;
+  calories: number;
+  position: number;
+}
+
 export interface DayFixture {
   id: string;
   date: string;
+  location: string;
+  weight_lbs: string | null;
+  creatine_mg: number | null;
   meals: MealFixture[];
+  exercises: ExerciseFixture[];
 }
 
 export interface TestState {
@@ -43,6 +56,7 @@ export interface TestState {
   days: DayFixture[];
   nextMealId: number;
   nextDayId: number;
+  nextExerciseId: number;
 }
 
 const DEFAULT_FOOD: Omit<FoodFixture, "id" | "name" | "calories"> = {
@@ -113,7 +127,7 @@ function macrosFor(totals: Record<string, number>) {
 function daySummary(day: DayFixture, bmr = 1970) {
   const totals = totalsFor(day.meals);
   const macros = macrosFor(totals);
-  const exercise_calories = 0;
+  const exercise_calories = day.exercises.reduce((a, e) => a + e.calories, 0);
   const allowed = bmr + exercise_calories;
   const consumed = totals.calories;
   const net = consumed - allowed;
@@ -134,13 +148,13 @@ function serializeDay(day: DayFixture) {
   return {
     id: day.id,
     date: day.date,
-    location: "SD",
-    weight_lbs: null,
-    creatine_mg: null,
+    location: day.location,
+    weight_lbs: day.weight_lbs,
+    creatine_mg: day.creatine_mg,
     meals: day.meals,
     sleep: null,
     nap: null,
-    exercises: [],
+    exercises: day.exercises,
     summary: daySummary(day),
     created_at: "2026-01-01T00:00:00Z",
     updated_at: "2026-01-01T00:00:00Z",
@@ -155,11 +169,16 @@ export function seedDay(
   state: TestState,
   date: string,
   meals: Array<{ foodId: string; grams: number }>,
+  overrides: Partial<Pick<DayFixture, "location" | "weight_lbs" | "creatine_mg">> = {},
 ): DayFixture {
   const day: DayFixture = {
     id: `day-${state.nextDayId++}`,
     date,
+    location: overrides.location ?? "SD",
+    weight_lbs: overrides.weight_lbs ?? null,
+    creatine_mg: overrides.creatine_mg ?? null,
     meals: [],
+    exercises: [],
   };
   for (const { foodId, grams } of meals) {
     const food = state.foods.find((f) => f.id === foodId);
@@ -187,6 +206,7 @@ export function createTestState(overrides: Partial<TestState> = {}): TestState {
     days: [],
     nextMealId: 1,
     nextDayId: 1,
+    nextExerciseId: 1,
     ...overrides,
   };
 }
@@ -217,15 +237,33 @@ export function buildHandlers(state: TestState) {
     }),
 
     http.post(`${API_BASE}/days/`, async ({ request }) => {
-      const body = (await request.json()) as { date?: string };
+      const body = (await request.json()) as { date?: string; location?: string };
       const date = body.date ?? state.today;
       const day: DayFixture = {
         id: `day-${state.nextDayId++}`,
         date,
+        location: body.location ?? "SD",
+        weight_lbs: null,
+        creatine_mg: null,
         meals: [],
+        exercises: [],
       };
       state.days.push(day);
       return HttpResponse.json(serializeDay(day), { status: 201 });
+    }),
+
+    http.patch(`${API_BASE}/days/:id/`, async ({ request, params }) => {
+      const body = (await request.json()) as Partial<{
+        location: string;
+        weight_lbs: string | null;
+        creatine_mg: number | null;
+      }>;
+      const day = state.days.find((d) => d.id === params.id);
+      if (!day) return HttpResponse.json({ detail: "not found" }, { status: 404 });
+      if (body.location !== undefined) day.location = body.location;
+      if (body.weight_lbs !== undefined) day.weight_lbs = body.weight_lbs;
+      if (body.creatine_mg !== undefined) day.creatine_mg = body.creatine_mg;
+      return HttpResponse.json(serializeDay(day));
     }),
 
     http.post(`${API_BASE}/meals/`, async ({ request }) => {
@@ -268,6 +306,63 @@ export function buildHandlers(state: TestState) {
         const idx = day.meals.findIndex((m) => m.id === params.id);
         if (idx >= 0) {
           day.meals.splice(idx, 1);
+          return new HttpResponse(null, { status: 204 });
+        }
+      }
+      return HttpResponse.json({ detail: "not found" }, { status: 404 });
+    }),
+
+    http.get(`${API_BASE}/exercise-logs/`, ({ request }) => {
+      const url = new URL(request.url);
+      const dayId = url.searchParams.get("day");
+      const all = state.days.flatMap((d) => d.exercises);
+      const filtered = dayId ? all.filter((e) => e.day === dayId) : all;
+      return HttpResponse.json(paginated(filtered));
+    }),
+
+    http.post(`${API_BASE}/exercise-logs/`, async ({ request }) => {
+      const body = (await request.json()) as {
+        day: string;
+        activity: string;
+        duration_minutes?: number | null;
+        calories: number;
+      };
+      const day = state.days.find((d) => d.id === body.day);
+      if (!day) return HttpResponse.json({ detail: "not found" }, { status: 404 });
+      const log: ExerciseFixture = {
+        id: `ex-${state.nextExerciseId++}`,
+        day: day.id,
+        activity: body.activity,
+        duration_minutes: body.duration_minutes ?? null,
+        calories: body.calories,
+        position: day.exercises.length,
+      };
+      day.exercises.push(log);
+      return HttpResponse.json(log, { status: 201 });
+    }),
+
+    http.patch(`${API_BASE}/exercise-logs/:id/`, async ({ request, params }) => {
+      const body = (await request.json()) as Partial<{
+        activity: string;
+        duration_minutes: number | null;
+        calories: number;
+      }>;
+      for (const day of state.days) {
+        const log = day.exercises.find((e) => e.id === params.id);
+        if (!log) continue;
+        if (body.activity !== undefined) log.activity = body.activity;
+        if (body.duration_minutes !== undefined) log.duration_minutes = body.duration_minutes;
+        if (body.calories !== undefined) log.calories = body.calories;
+        return HttpResponse.json(log);
+      }
+      return HttpResponse.json({ detail: "not found" }, { status: 404 });
+    }),
+
+    http.delete(`${API_BASE}/exercise-logs/:id/`, ({ params }) => {
+      for (const day of state.days) {
+        const idx = day.exercises.findIndex((e) => e.id === params.id);
+        if (idx >= 0) {
+          day.exercises.splice(idx, 1);
           return new HttpResponse(null, { status: 204 });
         }
       }

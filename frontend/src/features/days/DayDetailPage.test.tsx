@@ -53,7 +53,7 @@ describe("DayDetailPage", () => {
     const gramsInput = screen.getByLabelText("Grams", { exact: true });
     await user.tripleClick(gramsInput);
     await user.keyboard("50");
-    await user.click(screen.getByRole("button", { name: /^add$/i }));
+    await user.click(screen.getByRole("button", { name: /^add meal$/i }));
 
     const table = await screen.findByRole("table");
     await waitFor(() => {
