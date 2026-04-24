@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Email Verification</title>
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 480px; margin: 64px auto; padding: 24px; background: #0c0c0f; color: #e4e4e7; }
+    .card { background: #18181b; border: 1px solid #27272a; border-radius: 8px; padding: 32px; text-align: center; }
+    .ok { color: #34d399; }
+    .err { color: #f87171; }
+    h1 { margin: 0 0 16px; font-size: 20px; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1 class="{% if success %}ok{% else %}err{% endif %}">
+      {% if success %}✓ Verified{% else %}✗ Error{% endif %}
+    </h1>
+    <p>{{ message }}</p>
+  </div>
+</body>
+</html>

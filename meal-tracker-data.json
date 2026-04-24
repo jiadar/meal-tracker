@@ -1,0 +1,4436 @@
+{
+  "foodDatabase": {
+    "00 Flour": {
+      "calories": 357,
+      "fat": 1.2,
+      "satFat": 0,
+      "cholesterol": 0,
+      "sodium": 0,
+      "carbs": 78.3,
+      "fiber": 4.8,
+      "sugar": 2.4,
+      "addSugar": 0,
+      "protein": 11.9
+    },
+    "Almond Butter": {
+      "calories": 614,
+      "fat": 55.5,
+      "satFat": 4.4,
+      "cholesterol": 0,
+      "sodium": 7,
+      "carbs": 18.8,
+      "fiber": 10.5,
+      "sugar": 4.4,
+      "addSugar": 0,
+      "protein": 21
+    },
+    "Apple Cider Vinegar": {
+      "calories": 21,
+      "fat": 0,
+      "satFat": 0,
+      "cholesterol": 0,
+      "sodium": 5,
+      "carbs": 0.9,
+      "fiber": 0,
+      "sugar": 0.4,
+      "addSugar": 0,
+      "protein": 0
+    },
+    "Basil": {
+      "calories": 23,
+      "fat": 0.6,
+      "satFat": 0,
+      "cholesterol": 0,
+      "sodium": 4,
+      "carbs": 2.7,
+      "fiber": 1.6,
+      "sugar": 0.3,
+      "addSugar": 0,
+      "protein": 3.2
+    },
+    "Avocado": {
+      "calories": 160,
+      "fat": 14.7,
+      "satFat": 2.1,
+      "cholesterol": 0,
+      "sodium": 7,
+      "carbs": 8.5,
+      "fiber": 6.7,
+      "sugar": 0.66,
+      "addSugar": 0,
+      "protein": 2
+    },
+    "Bagel": {
+      "calories": 274,
+      "fat": 2.6,
+      "satFat": 0,
+      "cholesterol": 0,
+      "sodium": 400,
+      "carbs": 50.5,
+      "fiber": 3.2,
+      "sugar": 9.5,
+      "addSugar": 0,
+      "protein": 11.6
+    },
+    "Banana": {
+      "calories": 89,
+      "fat": 0.33,
+      "satFat": 0,
+      "cholesterol": 0,
+      "sodium": 1,
+      "carbs": 22.8,
+      "fiber": 2.6,
+      "sugar": 12.2,
+      "addSugar": 0,
+      "protein": 1.1
+    },
+    "Black Bean Corn Burger": {
+      "calories": 158.81104,
+      "fat": 3.991507,
+      "satFat": 0.573248,
+      "cholesterol": 0,
+      "sodium": 67.303609,
+      "carbs": 26.135881,
+      "fiber": 5.583864,
+      "sugar": 2.027601,
+      "addSugar": 0,
+      "protein": 6.390658
+    },
+    "Butter": {
+      "calories": 717,
+      "fat": 81,
+      "satFat": 51,
+      "cholesterol": 215,
+      "sodium": 11,
+      "carbs": 0.1,
+      "fiber": 0,
+      "sugar": 0.1,
+      "addSugar": 0,
+      "protein": 0.9
+    },
+    "Baru Empanadas Domino": {
+      "calories": 167,
+      "fat": 7,
+      "satFat": 3,
+      "cholesterol": 15,
+      "sodium": 400,
+      "carbs": 20,
+      "fiber": 3,
+      "sugar": 1,
+      "addSugar": 0,
+      "protein": 7
+    },
+    "Baru Mazorca": {
+      "calories": 175,
+      "fat": 9,
+      "satFat": 3,
+      "cholesterol": 10,
+      "sodium": 300,
+      "carbs": 20,
+      "fiber": 2,
+      "sugar": 3,
+      "addSugar": 0,
+      "protein": 4
+    },
+    "Baru Portobello Arepa": {
+      "calories": 200,
+      "fat": 10,
+      "satFat": 2,
+      "cholesterol": 0,
+      "sodium": 350,
+      "carbs": 22,
+      "fiber": 3,
+      "sugar": 2,
+      "addSugar": 0,
+      "protein": 5
+    },
+    "Baby Bella Mushroom": {
+      "calories": 22,
+      "fat": 0.3,
+      "satFat": 0,
+      "cholesterol": 0,
+      "sodium": 6,
+      "carbs": 3.3,
+      "fiber": 0.6,
+      "sugar": 1.7,
+      "addSugar": 0,
+      "protein": 2.5
+    },
+    "Bobos Coconut Oat Bar": {
+      "calories": 400,
+      "fat": 16.47,
+      "satFat": 10,
+      "cholesterol": 0,
+      "sodium": 164.7,
+      "carbs": 70.59,
+      "fiber": 4.71,
+      "sugar": 21.18,
+      "addSugar": 17.65,
+      "protein": 7.06
+    },
+    "Bobbys Veggie Burger": {
+      "calories": 188,
+      "fat": 10,
+      "satFat": 3.5,
+      "cholesterol": 30,
+      "sodium": 500,
+      "carbs": 18,
+      "fiber": 3,
+      "sugar": 4,
+      "addSugar": 2,
+      "protein": 10
+    },
+    "Bobos Strawberry Oat Bar": {
+      "calories": 400,
+      "fat": 14,
+      "satFat": 7,
+      "cholesterol": 0,
+      "sodium": 180,
+      "carbs": 64,
+      "fiber": 4,
+      "sugar": 24,
+      "addSugar": 20,
+      "protein": 4
+    },
+    "Beignet": {
+      "calories": 348,
+      "fat": 4,
+      "satFat": 1,
+      "cholesterol": 15,
+      "sodium": 350,
+      "carbs": 75,
+      "fiber": 1,
+      "sugar": 30,
+      "addSugar": 25,
+      "protein": 5
+    },
+    "BD Choc Protein Almond Milk": {
+      "calories": 41.67,
+      "fat": 1.04,
+      "satFat": 0,
+      "cholesterol": 0,
+      "sodium": 62.5,
+      "carbs": 5.42,
+      "fiber": 0.42,
+      "sugar": 5.42,
+      "addSugar": 4.17,
+      "protein": 3.33
+    },
+    "Black Beans": {
+      "calories": 132,
+      "fat": 0.5,
+      "satFat": 0.1,
+      "cholesterol": 0,
+      "sodium": 1,
+      "carbs": 24,
+      "fiber": 8.7,
+      "sugar": 0.3,
+      "addSugar": 0,
+      "protein": 8.9
+    },
+    "Blueberries": {
+      "calories": 57,
+      "fat": 0.33,
+      "satFat": 0.03,
+      "cholesterol": 0,
+      "sodium": 1,
+      "carbs": 14.5,
+      "fiber": 2.4,
+      "sugar": 10,
+      "addSugar": 4,
+      "protein": 0.74
+    },
+    "Carrots": {
+      "calories": 41,
+      "fat": 0.2,
+      "satFat": 0,
+      "cholesterol": 0,
+      "sodium": 69,
+      "carbs": 9.6,
+      "fiber": 2.8,
+      "sugar": 4.7,
+      "addSugar": 0,
+      "protein": 0.9
+    },
+    "Chips Queso Guac 25pct": {
+      "calories": 300,
+      "fat": 18,
+      "satFat": 6,
+      "cholesterol": 20,
+      "sodium": 500,
+      "carbs": 28,
+      "fiber": 3,
+      "sugar": 2,
+      "addSugar": 0,
+      "protein": 6
+    },
+    "Cava Pita Plain": {
+      "calories": 288,
+      "fat": 4,
+      "satFat": 0.5,
+      "cholesterol": 0,
+      "sodium": 400,
+      "carbs": 54,
+      "fiber": 3,
+      "sugar": 2,
+      "addSugar": 0,
+      "protein": 10
+    },
+    "Cava Pita HHC": {
+      "calories": 190,
+      "fat": 8.5,
+      "satFat": 2,
+      "cholesterol": 35,
+      "sodium": 450,
+      "carbs": 17,
+      "fiber": 2.5,
+      "sugar": 3,
+      "addSugar": 1,
+      "protein": 9
+    },
+    "Carrot Juice": {
+      "calories": 40,
+      "fat": 0.1,
+      "satFat": 0,
+      "cholesterol": 0,
+      "sodium": 28,
+      "carbs": 9.3,
+      "fiber": 0.7,
+      "sugar": 3.9,
+      "addSugar": 0,
+      "protein": 0.9
+    },
+    "Cashew Miso Sauce": {
+      "calories": 205.84,
+      "fat": 14.69,
+      "satFat": 2.64,
+      "cholesterol": 0,
+      "sodium": 565.54,
+      "carbs": 14.03,
+      "fiber": 1.88,
+      "sugar": 2.85,
+      "addSugar": 0,
+      "protein": 7.73
+    },
+    "Cheddar Cheese": {
+      "calories": 403,
+      "fat": 33.3,
+      "satFat": 18.9,
+      "cholesterol": 99,
+      "sodium": 653,
+      "carbs": 3.4,
+      "fiber": 0,
+      "sugar": 0.48,
+      "addSugar": 0,
+      "protein": 22.9
+    },
+    "Chia Seeds": {
+      "calories": 517,
+      "fat": 32.9,
+      "satFat": 0,
+      "cholesterol": 0,
+      "sodium": 0,
+      "carbs": 38.3,
+      "fiber": 0,
+      "sugar": 0,
+      "addSugar": 0,
+      "protein": 17
+    },
+    "Chocolate Granola": {
+      "calories": 454,
+      "fat": 18.3,
+      "satFat": 3.3,
+      "cholesterol": 0,
+      "sodium": 318,
+      "carbs": 68.6,
+      "fiber": 6.1,
+      "sugar": 28,
+      "addSugar": 27.4,
+      "protein": 8.1
+    },
+    "Cheba Magic Mushroom 8in": {
+      "calories": 188,
+      "fat": 4.4,
+      "satFat": 1.5,
+      "cholesterol": 10,
+      "sodium": 50,
+      "carbs": 32.2,
+      "fiber": 2,
+      "sugar": 3,
+      "addSugar": 0,
+      "protein": 8.68
+    },
+    "King Cake Cinnamon": {
+      "calories": 350,
+      "fat": 12,
+      "satFat": 6,
+      "cholesterol": 30,
+      "sodium": 300,
+      "carbs": 55,
+      "fiber": 1,
+      "sugar": 28,
+      "addSugar": 25,
+      "protein": 5
+    },
+    "Clementine": {
+      "calories": 47,
+      "fat": 0.15,
+      "satFat": 0,
+      "cholesterol": 0,
+      "sodium": 1,
+      "carbs": 12,
+      "fiber": 1.7,
+      "sugar": 9.2,
+      "addSugar": 0,
+      "protein": 0.85
+    },
+    "Clif Bar WC Macadamia": {
+      "calories": 382,
+      "fat": 10.1,
+      "satFat": 3.7,
+      "cholesterol": 0,
+      "sodium": 382,
+      "carbs": 60.1,
+      "fiber": 5.7,
+      "sugar": 36.8,
+      "addSugar": 29.4,
+      "protein": 13.5
+    },
+    "Clif Bar Choc Brownie": {
+      "calories": 368,
+      "fat": 8.82,
+      "satFat": 2.21,
+      "cholesterol": 0,
+      "sodium": 294,
+      "carbs": 63.24,
+      "fiber": 5.88,
+      "sugar": 30.88,
+      "addSugar": 25,
+      "protein": 14.71
+    },
+    "Corn Starch": {
+      "calories": 381,
+      "fat": 0.1,
+      "satFat": 0,
+      "cholesterol": 0,
+      "sodium": 9,
+      "carbs": 91,
+      "fiber": 0.9,
+      "sugar": 0,
+      "addSugar": 0,
+      "protein": 0.3
+    },
+    "Chips and Salsa": {
+      "calories": 480,
+      "fat": 24,
+      "satFat": 3,
+      "cholesterol": 0,
+      "sodium": 500,
+      "carbs": 60,
+      "fiber": 3,
+      "sugar": 2,
+      "addSugar": 0,
+      "protein": 6
+    },
+    "Cottage Cheese": {
+      "calories": 72,
+      "fat": 1,
+      "satFat": 0.7,
+      "cholesterol": 5,
+      "sodium": 300,
+      "carbs": 3,
+      "fiber": 0,
+      "sugar": 3,
+      "addSugar": 0,
+      "protein": 12
+    },
+    "Chocolate Cream Snowball": {
+      "calories": 85,
+      "fat": 3,
+      "satFat": 2,
+      "cholesterol": 10,
+      "sodium": 15,
+      "carbs": 14,
+      "fiber": 0,
+      "sugar": 13,
+      "addSugar": 13,
+      "protein": 0.5
+    },
+    "Coconut Oil": {
+      "calories": 862,
+      "fat": 100,
+      "satFat": 82.5,
+      "cholesterol": 0,
+      "sodium": 0,
+      "carbs": 0,
+      "fiber": 0,
+      "sugar": 0,
+      "addSugar": 0,
+      "protein": 0
+    },
+    "Coconut Water": {
+      "calories": 18.181818,
+      "fat": 0,
+      "satFat": 0,
+      "cholesterol": 0,
+      "sodium": 36.363636,
+      "carbs": 4.242424,
+      "fiber": 0,
+      "sugar": 3.030303,
+      "addSugar": 0,
+      "protein": 0
+    },
+    "Cotija Cheese": {
+      "calories": 393,
+      "fat": 29,
+      "satFat": 18,
+      "cholesterol": 88,
+      "sodium": 1590,
+      "carbs": 3,
+      "fiber": 0,
+      "sugar": 0,
+      "addSugar": 0,
+      "protein": 29
+    },
+    "Daves White Bread": {
+      "calories": 285.714286,
+      "fat": 0,
+      "satFat": 0,
+      "cholesterol": 0,
+      "sodium": 463.928571,
+      "carbs": 53.571429,
+      "fiber": 3.571429,
+      "sugar": 7.142857,
+      "addSugar": 0,
+      "protein": 10.714286
+    },
+    "Daves Whole Grains Bread": {
+      "calories": 244,
+      "fat": 3.3,
+      "satFat": 0,
+      "cholesterol": 0,
+      "sodium": 377.8,
+      "carbs": 48.9,
+      "fiber": 11.1,
+      "sugar": 11.1,
+      "addSugar": 11.1,
+      "protein": 11.1
+    },
+    "Dijon Mustard": {
+      "calories": 66,
+      "fat": 3.3,
+      "satFat": 0.2,
+      "cholesterol": 0,
+      "sodium": 1135,
+      "carbs": 6,
+      "fiber": 3.3,
+      "sugar": 2.7,
+      "addSugar": 0,
+      "protein": 3.8
+    },
+    "Diet Pizza Dough": {
+      "calories": 222.125,
+      "fat": 1.75,
+      "satFat": 0,
+      "cholesterol": 0,
+      "sodium": 421.75,
+      "carbs": 42.475,
+      "fiber": 2.175,
+      "sugar": 0,
+      "addSugar": 0,
+      "protein": 7.8625
+    },
+    "Dutch Process Cocoa": {
+      "calories": 250,
+      "fat": 16.666667,
+      "satFat": 8.333333,
+      "cholesterol": 0,
+      "sodium": 0,
+      "carbs": 33.333333,
+      "fiber": 33.333333,
+      "sugar": 0,
+      "addSugar": 0,
+      "protein": 16.666667
+    },
+    "Fried Chicken Thigh": {
+      "calories": 218,
+      "fat": 10.3,
+      "satFat": 2.8,
+      "cholesterol": 102,
+      "sodium": 95,
+      "carbs": 1.2,
+      "fiber": 0,
+      "sugar": 0,
+      "addSugar": 0,
+      "protein": 28.2
+    },
+    "Fried Salmon": {
+      "calories": 307,
+      "fat": 20.7,
+      "satFat": 3.6,
+      "cholesterol": 46,
+      "sodium": 391,
+      "carbs": 11.7,
+      "fiber": 0.5,
+      "sugar": 0.2,
+      "addSugar": 0,
+      "protein": 17.5
+    },
+    "Garlic": {
+      "calories": 149,
+      "fat": 0.5,
+      "satFat": 0.1,
+      "cholesterol": 0,
+      "sodium": 17,
+      "carbs": 33.1,
+      "fiber": 2.1,
+      "sugar": 1,
+      "addSugar": 0,
+      "protein": 6.4
+    },
+    "Homemade Choc Chip Cookie": {
+      "calories": 500,
+      "fat": 25,
+      "satFat": 15,
+      "cholesterol": 50,
+      "sodium": 200,
+      "carbs": 65,
+      "fiber": 2,
+      "sugar": 35,
+      "addSugar": 30,
+      "protein": 5
+    },
+    "Grilled Chicken": {
+      "calories": 165,
+      "fat": 3.6,
+      "satFat": 1,
+      "cholesterol": 85,
+      "sodium": 74,
+      "carbs": 0,
+      "fiber": 0,
+      "sugar": 0,
+      "addSugar": 0,
+      "protein": 31
+    },
+    "Gochujang": {
+      "calories": 100,
+      "fat": 1,
+      "satFat": 0,
+      "cholesterol": 0,
+      "sodium": 2000,
+      "carbs": 20,
+      "fiber": 2,
+      "sugar": 13,
+      "addSugar": 8,
+      "protein": 3
+    },
+    "Ezekiel Cinnamon Raisin Cereal": {
+      "calories": 333,
+      "fat": 1.8,
+      "satFat": 0,
+      "cholesterol": 0,
+      "sodium": 158,
+      "carbs": 73.7,
+      "fiber": 7.9,
+      "sugar": 14,
+      "addSugar": 0,
+      "protein": 12.3
+    },
+    "Fried Tofu": {
+      "calories": 271,
+      "fat": 17,
+      "satFat": 2.5,
+      "cholesterol": 0,
+      "sodium": 280,
+      "carbs": 12,
+      "fiber": 2,
+      "sugar": 1,
+      "addSugar": 0,
+      "protein": 17
+    },
+    "Flour Tortilla Large": {
+      "calories": 312,
+      "fat": 8,
+      "satFat": 3,
+      "cholesterol": 0,
+      "sodium": 500,
+      "carbs": 52,
+      "fiber": 3,
+      "sugar": 3,
+      "addSugar": 0,
+      "protein": 8
+    },
+    "GW Falafel Mezze": {
+      "calories": 185.96,
+      "fat": 7.35,
+      "satFat": 0.99,
+      "cholesterol": 0,
+      "sodium": 301.52,
+      "carbs": 24.2,
+      "fiber": 3.13,
+      "sugar": 2.42,
+      "addSugar": 0,
+      "protein": 6.12
+    },
+    "Green Pepper": {
+      "calories": 20,
+      "fat": 0.2,
+      "satFat": 0,
+      "cholesterol": 0,
+      "sodium": 3,
+      "carbs": 4.6,
+      "fiber": 1.7,
+      "sugar": 2.4,
+      "addSugar": 0,
+      "protein": 0.9
+    },
+    "Granola": {
+      "calories": 369,
+      "fat": 9.2,
+      "satFat": 2.3,
+      "cholesterol": 0,
+      "sodium": 207.7,
+      "carbs": 58.5,
+      "fiber": 6.2,
+      "sugar": 10.8,
+      "addSugar": 0,
+      "protein": 15.4
+    },
+    "Hush Puppies": {
+      "calories": 340,
+      "fat": 16,
+      "satFat": 3,
+      "cholesterol": 30,
+      "sodium": 650,
+      "carbs": 42,
+      "fiber": 2,
+      "sugar": 5,
+      "addSugar": 0,
+      "protein": 6
+    },
+    "Honey": {
+      "calories": 304,
+      "fat": 0,
+      "satFat": 0,
+      "cholesterol": 0,
+      "sodium": 0,
+      "carbs": 82.4,
+      "fiber": 0.2,
+      "sugar": 82.1,
+      "addSugar": 0,
+      "protein": 0.3
+    },
+    "Hot coco mix": {
+      "calories": 400,
+      "fat": 10,
+      "satFat": 10,
+      "cholesterol": 0,
+      "sodium": 950,
+      "carbs": 75,
+      "fiber": 0,
+      "sugar": 60,
+      "addSugar": 60,
+      "protein": 0
+    },
+    "Japanese Pancakes": {
+      "calories": 241.798942,
+      "fat": 6.772487,
+      "satFat": 2.698413,
+      "cholesterol": 201.375661,
+      "sodium": 77.407407,
+      "carbs": 36.402116,
+      "fiber": 0.52381,
+      "sugar": 23.015873,
+      "addSugar": 22.804233,
+      "protein": 8.783069
+    },
+    "Jasmine Rice Cooked": {
+      "calories": 130,
+      "fat": 0.3,
+      "satFat": 0.1,
+      "cholesterol": 0,
+      "sodium": 1,
+      "carbs": 28,
+      "fiber": 0.4,
+      "sugar": 0,
+      "addSugar": 0,
+      "protein": 2.7
+    },
+    "Jalapeno": {
+      "calories": 29,
+      "fat": 0.4,
+      "satFat": 0,
+      "cholesterol": 0,
+      "sodium": 3,
+      "carbs": 6.5,
+      "fiber": 2.8,
+      "sugar": 4.1,
+      "addSugar": 0,
+      "protein": 0.9
+    },
+    "Jasmine Rice": {
+      "calories": 164,
+      "fat": 1.4,
+      "satFat": 0,
+      "cholesterol": 0,
+      "sodium": 11,
+      "carbs": 34.3,
+      "fiber": 0,
+      "sugar": 0,
+      "addSugar": 0,
+      "protein": 2.9
+    },
+    "KA Buns": {
+      "calories": 280.746089,
+      "fat": 7.509025,
+      "satFat": 4.500602,
+      "cholesterol": 40.758123,
+      "sodium": 436.377858,
+      "carbs": 44.837545,
+      "fiber": 1.672684,
+      "sugar": 6.064982,
+      "addSugar": 6.016847,
+      "protein": 8.002407
+    },
+    "KA Buns Reduced Fat": {
+      "calories": 256.516129,
+      "fat": 3.587097,
+      "satFat": 2.051613,
+      "cholesterol": 31.883871,
+      "sodium": 233.935484,
+      "carbs": 46.787097,
+      "fiber": 5.212903,
+      "sugar": 5.148387,
+      "addSugar": 6.451613,
+      "protein": 8.529032
+    },
+    "Ketchup": {
+      "calories": 62,
+      "fat": 0,
+      "satFat": 0,
+      "cholesterol": 0,
+      "sodium": 1188,
+      "carbs": 6.3,
+      "fiber": 0,
+      "sugar": 6.3,
+      "addSugar": 0,
+      "protein": 0
+    },
+    "Kinders BBQ Sauce": {
+      "calories": 147,
+      "fat": 0,
+      "satFat": 0,
+      "cholesterol": 0,
+      "sodium": 853,
+      "carbs": 41.2,
+      "fiber": 0,
+      "sugar": 35.3,
+      "addSugar": 0,
+      "protein": 0
+    },
+    "Kool aid": {
+      "calories": 379,
+      "fat": 0,
+      "satFat": 0,
+      "cholesterol": 0,
+      "sodium": 0,
+      "carbs": 0,
+      "fiber": 0,
+      "sugar": 96.6,
+      "addSugar": 0,
+      "protein": 0
+    },
+    "Lemon Scone": {
+      "calories": 400,
+      "fat": 18,
+      "satFat": 10,
+      "cholesterol": 50,
+      "sodium": 350,
+      "carbs": 52,
+      "fiber": 1,
+      "sugar": 20,
+      "addSugar": 15,
+      "protein": 5
+    },
+    "Luna Breakfast Wrap": {
+      "calories": 203,
+      "fat": 6.8,
+      "satFat": 2.5,
+      "cholesterol": 80,
+      "sodium": 400,
+      "carbs": 20.3,
+      "fiber": 2,
+      "sugar": 2,
+      "addSugar": 0,
+      "protein": 15.2
+    },
+    "Low Sodium Soy Sauce": {
+      "calories": 53,
+      "fat": 0,
+      "satFat": 0,
+      "cholesterol": 0,
+      "sodium": 3600,
+      "carbs": 5.6,
+      "fiber": 0.4,
+      "sugar": 0.4,
+      "addSugar": 0,
+      "protein": 8.1
+    },
+    "Margarita": {
+      "calories": 116,
+      "fat": 0,
+      "satFat": 0,
+      "cholesterol": 0,
+      "sodium": 5,
+      "carbs": 13,
+      "fiber": 0,
+      "sugar": 11,
+      "addSugar": 10,
+      "protein": 0
+    },
+    "Mandarin": {
+      "calories": 53,
+      "fat": 0.31,
+      "satFat": 0.04,
+      "cholesterol": 0,
+      "sodium": 2,
+      "carbs": 13.3,
+      "fiber": 1.8,
+      "sugar": 10.6,
+      "addSugar": 0,
+      "protein": 0.81
+    },
+    "Metamucil": {
+      "calories": 33,
+      "fat": 0,
+      "satFat": 0,
+      "cholesterol": 0,
+      "sodium": 41.7,
+      "carbs": 0,
+      "fiber": 25,
+      "sugar": 0,
+      "addSugar": 0,
+      "protein": 0
+    },
+    "Milk": {
+      "calories": 61,
+      "fat": 3.3,
+      "satFat": 1.9,
+      "cholesterol": 10,
+      "sodium": 43,
+      "carbs": 4.8,
+      "fiber": 0,
+      "sugar": 5.1,
+      "addSugar": 0,
+      "protein": 3.2
+    },
+    "Modern Mill Topper": {
+      "calories": 500,
+      "fat": 25,
+      "satFat": 3.57,
+      "cholesterol": 0,
+      "sodium": 232,
+      "carbs": 46.43,
+      "fiber": 7.14,
+      "sugar": 21.43,
+      "addSugar": 10,
+      "protein": 25
+    },
+    "Mozzarella Low Fat": {
+      "calories": 285.714286,
+      "fat": 21.428571,
+      "satFat": 12.5,
+      "cholesterol": 71.428571,
+      "sodium": 750,
+      "carbs": 7.142857,
+      "fiber": 0,
+      "sugar": 0,
+      "addSugar": 0,
+      "protein": 25
+    },
+    "Nigiri Sushi": {
+      "calories": 167,
+      "fat": 2.5,
+      "satFat": 0.5,
+      "cholesterol": 15,
+      "sodium": 200,
+      "carbs": 24,
+      "fiber": 0.3,
+      "sugar": 3,
+      "addSugar": 0,
+      "protein": 9
+    },
+    "Meatball": {
+      "calories": 240,
+      "fat": 15,
+      "satFat": 5.5,
+      "cholesterol": 70,
+      "sodium": 550,
+      "carbs": 7,
+      "fiber": 0.5,
+      "sugar": 1.5,
+      "addSugar": 0,
+      "protein": 18
+    },
+    "Naked Pea Protein Choc": {
+      "calories": 372,
+      "fat": 6.98,
+      "satFat": 2.33,
+      "cholesterol": 0,
+      "sodium": 907,
+      "carbs": 20.93,
+      "fiber": 6.98,
+      "sugar": 11.63,
+      "addSugar": 0,
+      "protein": 58.14
+    },
+    "PE Vanilla Pecan Oatmeal": {
+      "calories": 276,
+      "fat": 8.6,
+      "satFat": 1.7,
+      "cholesterol": 0,
+      "sodium": 190,
+      "carbs": 41.4,
+      "fiber": 6.9,
+      "sugar": 10.3,
+      "addSugar": 8.6,
+      "protein": 10.3
+    },
+    "Plant Protein Drink": {
+      "calories": 38,
+      "fat": 1,
+      "satFat": 0.2,
+      "cholesterol": 0,
+      "sodium": 150,
+      "carbs": 3,
+      "fiber": 1,
+      "sugar": 1,
+      "addSugar": 0,
+      "protein": 4.2
+    },
+    "Pistachio Cannoli": {
+      "calories": 350,
+      "fat": 18,
+      "satFat": 8,
+      "cholesterol": 40,
+      "sodium": 120,
+      "carbs": 38,
+      "fiber": 1,
+      "sugar": 24,
+      "addSugar": 20,
+      "protein": 6
+    },
+    "Pietros Pizza": {
+      "calories": 235,
+      "fat": 8,
+      "satFat": 3.5,
+      "cholesterol": 12,
+      "sodium": 450,
+      "carbs": 32,
+      "fiber": 1.5,
+      "sugar": 4,
+      "addSugar": 0,
+      "protein": 9
+    },
+    "Pretzels": {
+      "calories": 380,
+      "fat": 3.5,
+      "satFat": 0.8,
+      "cholesterol": 0,
+      "sodium": 1360,
+      "carbs": 80,
+      "fiber": 2.8,
+      "sugar": 2.5,
+      "addSugar": 0,
+      "protein": 9
+    },
+    "Red Pepper Rice Plate": {
+      "calories": 150,
+      "fat": 5,
+      "satFat": 1,
+      "cholesterol": 0,
+      "sodium": 300,
+      "carbs": 22,
+      "fiber": 3,
+      "sugar": 3,
+      "addSugar": 0,
+      "protein": 4
+    },
+    "Parmesan": {
+      "calories": 392,
+      "fat": 25,
+      "satFat": 16.4,
+      "cholesterol": 68,
+      "sodium": 1529,
+      "carbs": 3.2,
+      "fiber": 0,
+      "sugar": 0.8,
+      "addSugar": 0,
+      "protein": 35.8
+    },
+    "Oats": {
+      "calories": 386,
+      "fat": 6.8,
+      "satFat": 1.1,
+      "cholesterol": 0,
+      "sodium": 0,
+      "carbs": 65.9,
+      "fiber": 11.4,
+      "sugar": 0,
+      "addSugar": 0,
+      "protein": 15.9
+    },
+    "Olive Oil": {
+      "calories": 884,
+      "fat": 100,
+      "satFat": 13.8,
+      "cholesterol": 0,
+      "sodium": 2,
+      "carbs": 0,
+      "fiber": 0,
+      "sugar": 0,
+      "addSugar": 0,
+      "protein": 0
+    },
+    "Orange Juice": {
+      "calories": 47,
+      "fat": 0,
+      "satFat": 0,
+      "cholesterol": 0,
+      "sodium": 0,
+      "carbs": 10.9,
+      "fiber": 0,
+      "sugar": 9.7,
+      "addSugar": 0,
+      "protein": 0.59
+    },
+    "Pancakes, Diet": {
+      "calories": 173,
+      "fat": 0.92,
+      "satFat": 0,
+      "cholesterol": 0,
+      "sodium": 48.2,
+      "carbs": 36.2,
+      "fiber": 2,
+      "sugar": 12.3,
+      "addSugar": 12.1,
+      "protein": 6.8
+    },
+    "Pizza": {
+      "calories": 223.816679,
+      "fat": 7.558227,
+      "satFat": 1.998497,
+      "cholesterol": 8.196844,
+      "sodium": 473.020285,
+      "carbs": 30.646131,
+      "fiber": 1.803156,
+      "sugar": 2.847483,
+      "addSugar": 0,
+      "protein": 7.956424
+    },
+    "Queso Fresco": {
+      "calories": 321,
+      "fat": 28.6,
+      "satFat": 17.9,
+      "cholesterol": 107,
+      "sodium": 571,
+      "carbs": 0,
+      "fiber": 0,
+      "sugar": 0,
+      "addSugar": 0,
+      "protein": 21.4
+    },
+    "Red Bell Pepper": {
+      "calories": 31,
+      "fat": 0.3,
+      "satFat": 0,
+      "cholesterol": 0,
+      "sodium": 4,
+      "carbs": 6,
+      "fiber": 2.1,
+      "sugar": 4.2,
+      "addSugar": 0,
+      "protein": 1
+    },
+    "Red Beans": {
+      "calories": 113.68595,
+      "fat": 5.500826,
+      "satFat": 1.447934,
+      "cholesterol": 7.028099,
+      "sodium": 215.404959,
+      "carbs": 11.6,
+      "fiber": 2.816529,
+      "sugar": 1.226446,
+      "addSugar": 0,
+      "protein": 5.282645
+    },
+    "Rice Noodles": {
+      "calories": 345,
+      "fat": 0,
+      "satFat": 0,
+      "cholesterol": 0,
+      "sodium": 0,
+      "carbs": 80,
+      "fiber": 3.6,
+      "sugar": 0,
+      "addSugar": 0,
+      "protein": 7.3
+    },
+    "Roma Tomato": {
+      "calories": 18,
+      "fat": 0.2,
+      "satFat": 0.03,
+      "cholesterol": 0,
+      "sodium": 5,
+      "carbs": 3.9,
+      "fiber": 1.2,
+      "sugar": 2.6,
+      "addSugar": 0,
+      "protein": 0.88
+    },
+    "Silk Unsweet Almond Milk": {
+      "calories": 12.5,
+      "fat": 1.25,
+      "satFat": 0,
+      "cholesterol": 0,
+      "sodium": 58.333333,
+      "carbs": 0.416667,
+      "fiber": 0,
+      "sugar": 0,
+      "addSugar": 0,
+      "protein": 0.416667
+    },
+    "Silk Vanilla Protein": {
+      "calories": 58,
+      "fat": 3.3,
+      "satFat": 0.21,
+      "cholesterol": 0,
+      "sodium": 92,
+      "carbs": 2.9,
+      "fiber": 0.4,
+      "sugar": 2.5,
+      "addSugar": 0,
+      "protein": 4.2
+    },
+    "SM Tomatoes": {
+      "calories": 26,
+      "fat": 0,
+      "satFat": 0,
+      "cholesterol": 0,
+      "sodium": 35,
+      "carbs": 5.2,
+      "fiber": 0,
+      "sugar": 3.5,
+      "addSugar": 0,
+      "protein": 0.87
+    },
+    "Sweet Potato Burger": {
+      "calories": 155.882353,
+      "fat": 3.676471,
+      "satFat": 0.637255,
+      "cholesterol": 30.392157,
+      "sodium": 122.54902,
+      "carbs": 25.245098,
+      "fiber": 4.852941,
+      "sugar": 2.352941,
+      "addSugar": 0.357843,
+      "protein": 6.421569
+    },
+    "Sweet Potato Fries": {
+      "calories": 260,
+      "fat": 14,
+      "satFat": 2,
+      "cholesterol": 0,
+      "sodium": 300,
+      "carbs": 32,
+      "fiber": 3,
+      "sugar": 5,
+      "addSugar": 0,
+      "protein": 2
+    },
+    "Synergy Kombucha": {
+      "calories": 12,
+      "fat": 0,
+      "satFat": 0,
+      "cholesterol": 0,
+      "sodium": 4,
+      "carbs": 2.9,
+      "fiber": 0,
+      "sugar": 0,
+      "addSugar": 0,
+      "protein": 0
+    },
+    "Tempeh Slider": {
+      "calories": 267.252747,
+      "fat": 20.32967,
+      "satFat": 3.274725,
+      "cholesterol": 0,
+      "sodium": 420.791209,
+      "carbs": 14.461538,
+      "fiber": 0.813187,
+      "sugar": 7.912088,
+      "addSugar": 0,
+      "protein": 9.164835
+    },
+    "Thai Curry": {
+      "calories": 106.007067,
+      "fat": 5.300353,
+      "satFat": 2.473498,
+      "cholesterol": 0,
+      "sodium": 243.992933,
+      "carbs": 11.660777,
+      "fiber": 1.80212,
+      "sugar": 2.473498,
+      "addSugar": 0,
+      "protein": 0.706714
+    },
+    "Tequila": {
+      "calories": 231,
+      "fat": 0,
+      "satFat": 0,
+      "cholesterol": 0,
+      "sodium": 0,
+      "carbs": 0,
+      "fiber": 0,
+      "sugar": 0,
+      "addSugar": 0,
+      "protein": 0
+    },
+    "Tempeh Penne": {
+      "calories": 112,
+      "fat": 2.64,
+      "satFat": 0.53,
+      "cholesterol": 0.39,
+      "sodium": 19,
+      "carbs": 17.61,
+      "fiber": 1.63,
+      "sugar": 3.02,
+      "addSugar": 0,
+      "protein": 5.1
+    },
+    "Tomato Salsa": {
+      "calories": 36,
+      "fat": 0.2,
+      "satFat": 0,
+      "cholesterol": 0,
+      "sodium": 600,
+      "carbs": 7,
+      "fiber": 1.5,
+      "sugar": 4,
+      "addSugar": 0,
+      "protein": 1.5
+    },
+    "Truvani Choc Protein": {
+      "calories": 394,
+      "fat": 9.1,
+      "satFat": 3,
+      "cholesterol": 0,
+      "sodium": 879,
+      "carbs": 15.2,
+      "fiber": 6.1,
+      "sugar": 6.1,
+      "addSugar": 0,
+      "protein": 60.6
+    },
+    "Teriyaki Sauce": {
+      "calories": 89,
+      "fat": 0,
+      "satFat": 0,
+      "cholesterol": 0,
+      "sodium": 3800,
+      "carbs": 16,
+      "fiber": 0,
+      "sugar": 14,
+      "addSugar": 10,
+      "protein": 6
+    },
+    "Tofu Banh Mi No Sauce": {
+      "calories": 140,
+      "fat": 5,
+      "satFat": 1,
+      "cholesterol": 0,
+      "sodium": 350,
+      "carbs": 18,
+      "fiber": 2,
+      "sugar": 3,
+      "addSugar": 0,
+      "protein": 6
+    },
+    "Tofu": {
+      "calories": 144,
+      "fat": 8.7,
+      "satFat": 1.3,
+      "cholesterol": 0,
+      "sodium": 14,
+      "carbs": 2.8,
+      "fiber": 2.3,
+      "sugar": 0,
+      "addSugar": 0,
+      "protein": 17.3
+    },
+    "Tofu Beef Tacos": {
+      "calories": 298.128079,
+      "fat": 26.423645,
+      "satFat": 2.660099,
+      "cholesterol": 0,
+      "sodium": 127.783251,
+      "carbs": 9.812808,
+      "fiber": 3.270936,
+      "sugar": 3.349754,
+      "addSugar": 1.192118,
+      "protein": 10.029557
+    },
+    "Turkey": {
+      "calories": 147,
+      "fat": 2.1,
+      "satFat": 0.59,
+      "cholesterol": 80,
+      "sodium": 99,
+      "carbs": 0,
+      "fiber": 0,
+      "sugar": 0,
+      "addSugar": 0,
+      "protein": 30.1
+    },
+    "Whey Powder, Chocolate": {
+      "calories": 339,
+      "fat": 3.4,
+      "satFat": 3.4,
+      "cholesterol": 0,
+      "sodium": 102,
+      "carbs": 33.9,
+      "fiber": 0,
+      "sugar": 17,
+      "addSugar": 0,
+      "protein": 50.9
+    },
+    "White Corn Tortillas": {
+      "calories": 133,
+      "fat": 2.2,
+      "satFat": 0,
+      "cholesterol": 0,
+      "sodium": 11,
+      "carbs": 26.7,
+      "fiber": 0,
+      "sugar": 0,
+      "addSugar": 0,
+      "protein": 4.4
+    },
+    "Kind Coconut Almond Bar": {
+      "calories": 475,
+      "fat": 35,
+      "satFat": 15,
+      "cholesterol": 0,
+      "sodium": 50,
+      "carbs": 45,
+      "fiber": 7.5,
+      "sugar": 22.5,
+      "addSugar": 17.5,
+      "protein": 7.5
+    },
+    "Kodiak Protein Granola": {
+      "calories": 400,
+      "fat": 8,
+      "satFat": 1,
+      "cholesterol": 0,
+      "sodium": 400,
+      "carbs": 68,
+      "fiber": 6,
+      "sugar": 18,
+      "addSugar": 14,
+      "protein": 20
+    },
+    "Kodiak Protein Pancakes": {
+      "calories": 358.5,
+      "fat": 3.77,
+      "satFat": 0,
+      "cholesterol": 18.87,
+      "sodium": 716.98,
+      "carbs": 56.6,
+      "fiber": 9.43,
+      "sugar": 5.66,
+      "addSugar": 3.77,
+      "protein": 26.42
+    },
+    "Shrimp Poboy 6in": {
+      "calories": 175,
+      "fat": 6,
+      "satFat": 1,
+      "cholesterol": 80,
+      "sodium": 100,
+      "carbs": 22,
+      "fiber": 1,
+      "sugar": 2,
+      "addSugar": 0,
+      "protein": 10
+    },
+    "Silk Soy Vanilla Unsweet": {
+      "calories": 12.5,
+      "fat": 0.625,
+      "satFat": 0,
+      "cholesterol": 0,
+      "sodium": 33.3,
+      "carbs": 0.42,
+      "fiber": 0,
+      "sugar": 0,
+      "addSugar": 0,
+      "protein": 1.25
+    },
+    "Sourdough Bread": {
+      "calories": 194,
+      "fat": 1,
+      "satFat": 0.2,
+      "cholesterol": 0,
+      "sodium": 400,
+      "carbs": 38,
+      "fiber": 2,
+      "sugar": 2,
+      "addSugar": 0,
+      "protein": 7
+    },
+    "Spinach": {
+      "calories": 23,
+      "fat": 0.4,
+      "satFat": 0.1,
+      "cholesterol": 0,
+      "sodium": 79,
+      "carbs": 3.6,
+      "fiber": 2.2,
+      "sugar": 0.4,
+      "addSugar": 0,
+      "protein": 2.9
+    },
+    "Starbucks Blueberry Muffin": {
+      "calories": 300,
+      "fat": 13.2,
+      "satFat": 6.4,
+      "cholesterol": 27,
+      "sodium": 309,
+      "carbs": 42.7,
+      "fiber": 0.9,
+      "sugar": 21.8,
+      "addSugar": 18.2,
+      "protein": 4.1
+    },
+    "Sushi Maki Roll": {
+      "calories": 139,
+      "fat": 3,
+      "satFat": 0.5,
+      "cholesterol": 15,
+      "sodium": 400,
+      "carbs": 21,
+      "fiber": 1,
+      "sugar": 4,
+      "addSugar": 2,
+      "protein": 7
+    },
+    "Suja Uber Greens": {
+      "calories": 14.08,
+      "fat": 0,
+      "satFat": 0,
+      "cholesterol": 0,
+      "sodium": 4.23,
+      "carbs": 3.38,
+      "fiber": 0,
+      "sugar": 2.25,
+      "addSugar": 0,
+      "protein": 0.56
+    },
+    "Dough Ball": {
+      "calories": 222.125,
+      "fat": 1.75,
+      "satFat": 0,
+      "cholesterol": 0,
+      "sodium": 421.75,
+      "carbs": 42.475,
+      "fiber": 2.175,
+      "sugar": 0,
+      "addSugar": 0,
+      "protein": 7.8625
+    },
+    "Cucumber": {
+      "calories": 15,
+      "fat": 0.1,
+      "satFat": 0,
+      "cholesterol": 0,
+      "sodium": 2,
+      "carbs": 3.6,
+      "fiber": 0.5,
+      "sugar": 1.7,
+      "addSugar": 0,
+      "protein": 0.65
+    },
+    "Daily Beet Rainbow Bowl": {
+      "calories": 120,
+      "fat": 5,
+      "satFat": 0.86,
+      "cholesterol": 0,
+      "sodium": 80,
+      "carbs": 14.75,
+      "fiber": 3.4,
+      "sugar": 2,
+      "addSugar": 0,
+      "protein": 4
+    },
+    "Daves Blueberry Bagel": {
+      "calories": 273.68,
+      "fat": 2.63,
+      "satFat": 0,
+      "cholesterol": 0,
+      "sodium": 389.47,
+      "carbs": 55.79,
+      "fiber": 4.21,
+      "sugar": 9.47,
+      "addSugar": 5.26,
+      "protein": 10.53
+    },
+    "Whipped Cream Cheese": {
+      "calories": 176,
+      "fat": 16,
+      "satFat": 9,
+      "cholesterol": 35,
+      "sodium": 335,
+      "carbs": 7,
+      "fiber": 0,
+      "sugar": 4,
+      "addSugar": 0,
+      "protein": 4
+    },
+    "Handels Ice Cream": {
+      "calories": 233,
+      "fat": 13,
+      "satFat": 8,
+      "cholesterol": 45,
+      "sodium": 65,
+      "carbs": 26,
+      "fiber": 0,
+      "sugar": 22,
+      "addSugar": 18,
+      "protein": 4
+    },
+    "Harland Hazy IPA": {
+      "calories": 46.5,
+      "fat": 0,
+      "satFat": 0,
+      "cholesterol": 0,
+      "sodium": 4,
+      "carbs": 4.23,
+      "fiber": 0,
+      "sugar": 0,
+      "addSugar": 0,
+      "protein": 0.42
+    },
+    "Half and Half": {
+      "calories": 131,
+      "fat": 11.5,
+      "satFat": 7.16,
+      "cholesterol": 37,
+      "sodium": 41,
+      "carbs": 4.3,
+      "fiber": 0,
+      "sugar": 4.3,
+      "addSugar": 0,
+      "protein": 2.96
+    },
+    "Egg White": {
+      "calories": 52,
+      "fat": 0.2,
+      "satFat": 0,
+      "cholesterol": 0,
+      "sodium": 166,
+      "carbs": 0.7,
+      "fiber": 0,
+      "sugar": 0.7,
+      "addSugar": 0,
+      "protein": 10.9
+    },
+    "Egg": {
+      "calories": 143,
+      "fat": 9.5,
+      "satFat": 3.1,
+      "cholesterol": 372,
+      "sodium": 142,
+      "carbs": 0.7,
+      "fiber": 0,
+      "sugar": 0.4,
+      "addSugar": 0,
+      "protein": 12.6
+    },
+    "Dried Mango": {
+      "calories": 319,
+      "fat": 0.8,
+      "satFat": 0.2,
+      "cholesterol": 0,
+      "sodium": 2,
+      "carbs": 78.6,
+      "fiber": 2.4,
+      "sugar": 73,
+      "addSugar": 0,
+      "protein": 1.5
+    },
+    "Margarita Half Sugar": {
+      "calories": 80,
+      "fat": 0,
+      "satFat": 0,
+      "cholesterol": 0,
+      "sodium": 5,
+      "carbs": 8,
+      "fiber": 0,
+      "sugar": 6,
+      "addSugar": 4,
+      "protein": 0
+    },
+    "Maple Syrup": {
+      "calories": 260,
+      "fat": 0.1,
+      "satFat": 0,
+      "cholesterol": 0,
+      "sodium": 12,
+      "carbs": 67,
+      "fiber": 0,
+      "sugar": 60,
+      "addSugar": 0,
+      "protein": 0
+    },
+    "Spaghetti": {
+      "calories": 131,
+      "fat": 1.1,
+      "satFat": 0.2,
+      "cholesterol": 0,
+      "sodium": 1,
+      "carbs": 25,
+      "fiber": 1.8,
+      "sugar": 0.6,
+      "addSugar": 0,
+      "protein": 5
+    },
+    "Simply OJ Calcium": {
+      "calories": 45.83,
+      "fat": 0,
+      "satFat": 0,
+      "cholesterol": 0,
+      "sodium": 0,
+      "carbs": 11.25,
+      "fiber": 0,
+      "sugar": 9.58,
+      "addSugar": 0,
+      "protein": 0.83
+    },
+    "Oreo Cookies": {
+      "calories": 480,
+      "fat": 20,
+      "satFat": 5,
+      "cholesterol": 0,
+      "sodium": 410,
+      "carbs": 70,
+      "fiber": 3,
+      "sugar": 40,
+      "addSugar": 38,
+      "protein": 5
+    },
+    "Onion": {
+      "calories": 40,
+      "fat": 0.1,
+      "satFat": 0,
+      "cholesterol": 0,
+      "sodium": 4,
+      "carbs": 9.3,
+      "fiber": 1.7,
+      "sugar": 4.2,
+      "addSugar": 0,
+      "protein": 1.1
+    },
+    "ON Gold Standard Whey": {
+      "calories": 375,
+      "fat": 4.69,
+      "satFat": 1.56,
+      "cholesterol": 93.75,
+      "sodium": 406.25,
+      "carbs": 9.375,
+      "fiber": 3.125,
+      "sugar": 3.125,
+      "addSugar": 0,
+      "protein": 75
+    },
+    "Vals Shrimp Taco": {
+      "calories": 208,
+      "fat": 10,
+      "satFat": 2,
+      "cholesterol": 60,
+      "sodium": 400,
+      "carbs": 20,
+      "fiber": 1,
+      "sugar": 1,
+      "addSugar": 0,
+      "protein": 10
+    },
+    "Vals Cauliflower Taco": {
+      "calories": 182,
+      "fat": 9,
+      "satFat": 1,
+      "cholesterol": 0,
+      "sodium": 350,
+      "carbs": 22,
+      "fiber": 3,
+      "sugar": 2,
+      "addSugar": 0,
+      "protein": 5
+    },
+    "Vals Sweet Potato Taco": {
+      "calories": 183,
+      "fat": 9,
+      "satFat": 3,
+      "cholesterol": 5,
+      "sodium": 300,
+      "carbs": 22,
+      "fiber": 2,
+      "sugar": 4,
+      "addSugar": 0,
+      "protein": 4
+    },
+    "Vegan Shawarma Plate": {
+      "calories": 142.45,
+      "fat": 4.91,
+      "satFat": 0.28,
+      "cholesterol": 0,
+      "sodium": 150.94,
+      "carbs": 17.74,
+      "fiber": 1.13,
+      "sugar": 0.94,
+      "addSugar": 0,
+      "protein": 7.36
+    },
+    "Pita Bread": {
+      "calories": 275,
+      "fat": 1.67,
+      "satFat": 0.2,
+      "cholesterol": 0,
+      "sodium": 536,
+      "carbs": 55,
+      "fiber": 2,
+      "sugar": 1.7,
+      "addSugar": 0,
+      "protein": 8.33
+    },
+    "Veg Meatloaf": {
+      "calories": 108.78,
+      "fat": 2.94,
+      "satFat": 0.52,
+      "cholesterol": 23.13,
+      "sodium": 128.2,
+      "carbs": 16.24,
+      "fiber": 2.96,
+      "sugar": 4.7,
+      "addSugar": 0,
+      "protein": 5.19
+    },
+    "Roasted Fingerlings": {
+      "calories": 122.35,
+      "fat": 5.71,
+      "satFat": 0.79,
+      "cholesterol": 0,
+      "sodium": 5.9,
+      "carbs": 16.54,
+      "fiber": 2.15,
+      "sugar": 0.75,
+      "addSugar": 0,
+      "protein": 1.9
+    },
+    "White Miso Risotto": {
+      "calories": 134.79,
+      "fat": 7.31,
+      "satFat": 3.01,
+      "cholesterol": 4.93,
+      "sodium": 291.17,
+      "carbs": 14.26,
+      "fiber": 0.79,
+      "sugar": 0.89,
+      "addSugar": 0,
+      "protein": 3.64
+    },
+    "Walnuts": {
+      "calories": 654,
+      "fat": 65.2,
+      "satFat": 6.1,
+      "cholesterol": 0,
+      "sodium": 2,
+      "carbs": 13.7,
+      "fiber": 6.7,
+      "sugar": 2.6,
+      "addSugar": 0,
+      "protein": 15.2
+    },
+    "White Miso Paste": {
+      "calories": 199,
+      "fat": 6,
+      "satFat": 1,
+      "cholesterol": 0,
+      "sodium": 3728,
+      "carbs": 26,
+      "fiber": 5,
+      "sugar": 6,
+      "addSugar": 0,
+      "protein": 12
+    },
+    "Woodstock Pizza": {
+      "calories": 259.82906,
+      "fat": 9.230769,
+      "satFat": 3.846154,
+      "cholesterol": 18.974359,
+      "sodium": 578.034188,
+      "carbs": 32.735043,
+      "fiber": 1.880342,
+      "sugar": 5.299145,
+      "addSugar": 0,
+      "protein": 11.538462
+    }
+  },
+  "foodIds": {
+    "00 Flour": 1,
+    "Almond Butter": 2,
+    "Apple Cider Vinegar": 3,
+    "Avocado": 4,
+    "BD Choc Protein Almond Milk": 5,
+    "Baby Bella Mushroom": 6,
+    "Bagel": 7,
+    "Banana": 8,
+    "Baru Empanadas Domino": 9,
+    "Baru Mazorca": 10,
+    "Baru Portobello Arepa": 11,
+    "Basil": 12,
+    "Beignet": 13,
+    "Black Bean Corn Burger": 14,
+    "Black Beans": 15,
+    "Blueberries": 16,
+    "Bobbys Veggie Burger": 17,
+    "Bobos Coconut Oat Bar": 18,
+    "Bobos Strawberry Oat Bar": 19,
+    "Butter": 20,
+    "Carrot Juice": 21,
+    "Carrots": 22,
+    "Cashew Miso Sauce": 23,
+    "Cava Pita HHC": 24,
+    "Cava Pita Plain": 25,
+    "Cheba Magic Mushroom 8in": 26,
+    "Cheddar Cheese": 27,
+    "Chia Seeds": 28,
+    "Chips Queso Guac 25pct": 29,
+    "Chips and Salsa": 30,
+    "Chocolate Cream Snowball": 31,
+    "Chocolate Granola": 32,
+    "Clementine": 33,
+    "Clif Bar Choc Brownie": 34,
+    "Clif Bar WC Macadamia": 35,
+    "Coconut Oil": 36,
+    "Coconut Water": 37,
+    "Corn Starch": 38,
+    "Cotija Cheese": 39,
+    "Cottage Cheese": 40,
+    "Cucumber": 41,
+    "Daily Beet Rainbow Bowl": 42,
+    "Daves Blueberry Bagel": 43,
+    "Daves White Bread": 44,
+    "Daves Whole Grains Bread": 45,
+    "Diet Pizza Dough": 46,
+    "Dijon Mustard": 47,
+    "Dough Ball": 48,
+    "Dried Mango": 49,
+    "Dutch Process Cocoa": 50,
+    "Egg": 51,
+    "Egg White": 52,
+    "Ezekiel Cinnamon Raisin Cereal": 53,
+    "Flour Tortilla Large": 54,
+    "Fried Chicken Thigh": 55,
+    "Fried Salmon": 56,
+    "Fried Tofu": 57,
+    "GW Falafel Mezze": 58,
+    "Garlic": 59,
+    "Gochujang": 60,
+    "Granola": 61,
+    "Green Pepper": 62,
+    "Grilled Chicken": 63,
+    "Half and Half": 64,
+    "Handels Ice Cream": 65,
+    "Harland Hazy IPA": 66,
+    "Homemade Choc Chip Cookie": 67,
+    "Honey": 68,
+    "Hot coco mix": 69,
+    "Hush Puppies": 70,
+    "Jalapeno": 71,
+    "Japanese Pancakes": 72,
+    "Jasmine Rice": 73,
+    "Jasmine Rice Cooked": 74,
+    "KA Buns": 75,
+    "KA Buns Reduced Fat": 76,
+    "Ketchup": 77,
+    "Kind Coconut Almond Bar": 78,
+    "Kinders BBQ Sauce": 79,
+    "King Cake Cinnamon": 80,
+    "Kodiak Protein Granola": 81,
+    "Kodiak Protein Pancakes": 82,
+    "Kool aid": 83,
+    "Lemon Scone": 84,
+    "Low Sodium Soy Sauce": 85,
+    "Luna Breakfast Wrap": 86,
+    "Mandarin": 87,
+    "Maple Syrup": 88,
+    "Margarita": 89,
+    "Margarita Half Sugar": 90,
+    "Meatball": 91,
+    "Metamucil": 92,
+    "Milk": 93,
+    "Modern Mill Topper": 94,
+    "Mozzarella Low Fat": 95,
+    "Naked Pea Protein Choc": 96,
+    "Nigiri Sushi": 97,
+    "ON Gold Standard Whey": 98,
+    "Oats": 99,
+    "Olive Oil": 100,
+    "Onion": 101,
+    "Orange Juice": 102,
+    "Oreo Cookies": 103,
+    "PE Vanilla Pecan Oatmeal": 104,
+    "Pancakes, Diet": 105,
+    "Parmesan": 106,
+    "Pietros Pizza": 107,
+    "Pistachio Cannoli": 108,
+    "Pita Bread": 109,
+    "Pizza": 110,
+    "Plant Protein Drink": 111,
+    "Pretzels": 112,
+    "Queso Fresco": 113,
+    "Red Beans": 114,
+    "Red Bell Pepper": 115,
+    "Red Pepper Rice Plate": 116,
+    "Rice Noodles": 117,
+    "Roasted Fingerlings": 118,
+    "Roma Tomato": 119,
+    "SM Tomatoes": 120,
+    "Shrimp Poboy 6in": 121,
+    "Silk Soy Vanilla Unsweet": 122,
+    "Silk Unsweet Almond Milk": 123,
+    "Silk Vanilla Protein": 124,
+    "Simply OJ Calcium": 125,
+    "Sourdough Bread": 126,
+    "Spaghetti": 127,
+    "Spinach": 128,
+    "Starbucks Blueberry Muffin": 129,
+    "Suja Uber Greens": 130,
+    "Sushi Maki Roll": 131,
+    "Sweet Potato Burger": 132,
+    "Sweet Potato Fries": 133,
+    "Synergy Kombucha": 134,
+    "Tempeh Penne": 135,
+    "Tempeh Slider": 136,
+    "Tequila": 137,
+    "Teriyaki Sauce": 138,
+    "Thai Curry": 139,
+    "Tofu": 140,
+    "Tofu Banh Mi No Sauce": 141,
+    "Tofu Beef Tacos": 142,
+    "Tomato Salsa": 143,
+    "Truvani Choc Protein": 144,
+    "Turkey": 145,
+    "Vals Cauliflower Taco": 146,
+    "Vals Shrimp Taco": 147,
+    "Vals Sweet Potato Taco": 148,
+    "Veg Meatloaf": 149,
+    "Vegan Shawarma Plate": 150,
+    "Walnuts": 151,
+    "Whey Powder, Chocolate": 152,
+    "Whipped Cream Cheese": 153,
+    "White Corn Tortillas": 154,
+    "White Miso Paste": 155,
+    "White Miso Risotto": 156,
+    "Woodstock Pizza": 157
+  },
+  "months": {
+    "apr2026": {
+      "label": "Apr 2026",
+      "days": {
+        "5": {
+          "location": "SD",
+          "weight": 167.4,
+          "exercise": 600,
+          "exerciseNote": "Jiu Jitsu",
+          "creatine": 5,
+          "meals": [
+            {
+              "item": "Kodiak Protein Pancakes",
+              "grams": 50
+            },
+            {
+              "item": "Egg",
+              "grams": 50
+            },
+            {
+              "item": "Silk Soy Vanilla Unsweet",
+              "grams": 310
+            },
+            {
+              "item": "Suja Uber Greens",
+              "grams": 355
+            },
+            {
+              "item": "Dough Ball",
+              "grams": 270
+            },
+            {
+              "item": "Mozzarella Low Fat",
+              "grams": 60
+            },
+            {
+              "item": "SM Tomatoes",
+              "grams": 150
+            },
+            {
+              "item": "Olive Oil",
+              "grams": 15
+            },
+            {
+              "item": "Daves Blueberry Bagel",
+              "grams": 95
+            },
+            {
+              "item": "Whipped Cream Cheese",
+              "grams": 45
+            },
+            {
+              "item": "Half and Half",
+              "grams": 35
+            },
+            {
+              "item": "Dried Mango",
+              "grams": 20
+            },
+            {
+              "item": "Maple Syrup",
+              "grams": 60
+            },
+            {
+              "item": "Blueberries",
+              "grams": 113
+            },
+            {
+              "item": "Walnuts",
+              "grams": 20
+            },
+            {
+              "item": "ON Gold Standard Whey",
+              "grams": 64
+            },
+            {
+              "item": "Simply OJ Calcium",
+              "grams": 290
+            }
+          ]
+        },
+        "6": {
+          "location": "SD",
+          "weight": 165.8,
+          "exercise": 300,
+          "exerciseNote": "Jiu Jitsu practice",
+          "creatine": 5,
+          "meals": [
+            {
+              "item": "Half and Half",
+              "grams": 35
+            },
+            {
+              "item": "Avocado",
+              "grams": 55
+            },
+            {
+              "item": "Egg",
+              "grams": 100
+            },
+            {
+              "item": "Butter",
+              "grams": 5
+            },
+            {
+              "item": "Daves White Bread",
+              "grams": 28
+            },
+            {
+              "item": "Whipped Cream Cheese",
+              "grams": 15
+            },
+            {
+              "item": "Silk Soy Vanilla Unsweet",
+              "grams": 300
+            },
+            {
+              "item": "Naked Pea Protein Choc",
+              "grams": 43
+            },
+            {
+              "item": "Veg Meatloaf",
+              "grams": 150
+            },
+            {
+              "item": "Roasted Fingerlings",
+              "grams": 150
+            },
+            {
+              "item": "Ketchup",
+              "grams": 20
+            },
+            {
+              "item": "Kinders BBQ Sauce",
+              "grams": 30
+            },
+            {
+              "item": "Coconut Water",
+              "grams": 330
+            },
+            {
+              "item": "White Miso Risotto",
+              "grams": 170
+            },
+            {
+              "item": "Daves White Bread",
+              "grams": 39
+            },
+            {
+              "item": "Red Beans",
+              "grams": 260
+            }
+          ]
+        },
+        "7": {
+          "location": "SD",
+          "weight": 165.2,
+          "exercise": 0,
+          "meals": [
+            {
+              "item": "Daves Blueberry Bagel",
+              "grams": 95
+            },
+            {
+              "item": "Whipped Cream Cheese",
+              "grams": 18
+            },
+            {
+              "item": "Half and Half",
+              "grams": 30
+            },
+            {
+              "item": "BD Choc Protein Almond Milk",
+              "grams": 240
+            },
+            {
+              "item": "Vegan Shawarma Plate",
+              "grams": 470
+            },
+            {
+              "item": "Pita Bread",
+              "grams": 100
+            },
+            {
+              "item": "BD Choc Protein Almond Milk",
+              "grams": 50
+            },
+            {
+              "item": "Naked Pea Protein Choc",
+              "grams": 43
+            },
+            {
+              "item": "Silk Soy Vanilla Unsweet",
+              "grams": 190
+            },
+            {
+              "item": "Honey",
+              "grams": 12
+            },
+            {
+              "item": "Dijon Mustard",
+              "grams": 10
+            },
+            {
+              "item": "Olive Oil",
+              "grams": 2
+            },
+            {
+              "item": "Apple Cider Vinegar",
+              "grams": 10
+            },
+            {
+              "item": "Avocado",
+              "grams": 55
+            },
+            {
+              "item": "Cucumber",
+              "grams": 60
+            },
+            {
+              "item": "Parmesan",
+              "grams": 10
+            },
+            {
+              "item": "Modern Mill Topper",
+              "grams": 20
+            },
+            {
+              "item": "Roma Tomato",
+              "grams": 60
+            },
+            {
+              "item": "Chia Seeds",
+              "grams": 3
+            },
+            {
+              "item": "Walnuts",
+              "grams": 3
+            },
+            {
+              "item": "Basil",
+              "grams": 3
+            },
+            {
+              "item": "Metamucil",
+              "grams": 33
+            },
+            {
+              "item": "Kool aid",
+              "grams": 9
+            }
+          ]
+        },
+        "8": {
+          "location": "SD",
+          "weight": 167.2,
+          "exercise": 500,
+          "exerciseNote": "Physical Therapy + Jiu Jitsu",
+          "creatine": 5,
+          "meals": [
+            {
+              "item": "BD Choc Protein Almond Milk",
+              "grams": 100
+            },
+            {
+              "item": "Silk Soy Vanilla Unsweet",
+              "grams": 250
+            },
+            {
+              "item": "Naked Pea Protein Choc",
+              "grams": 43
+            },
+            {
+              "item": "Daves Blueberry Bagel",
+              "grams": 95
+            },
+            {
+              "item": "Whipped Cream Cheese",
+              "grams": 18
+            },
+            {
+              "item": "Half and Half",
+              "grams": 30
+            },
+            {
+              "item": "Simply OJ Calcium",
+              "grams": 250
+            },
+            {
+              "item": "Daves White Bread",
+              "grams": 100
+            },
+            {
+              "item": "Red Beans",
+              "grams": 273
+            },
+            {
+              "item": "Synergy Kombucha",
+              "grams": 473
+            },
+            {
+              "item": "Honey",
+              "grams": 12
+            },
+            {
+              "item": "Dijon Mustard",
+              "grams": 10
+            },
+            {
+              "item": "Olive Oil",
+              "grams": 2
+            },
+            {
+              "item": "Apple Cider Vinegar",
+              "grams": 10
+            },
+            {
+              "item": "Avocado",
+              "grams": 60
+            },
+            {
+              "item": "Cucumber",
+              "grams": 100
+            },
+            {
+              "item": "Parmesan",
+              "grams": 10
+            },
+            {
+              "item": "Modern Mill Topper",
+              "grams": 20
+            },
+            {
+              "item": "Chia Seeds",
+              "grams": 3
+            },
+            {
+              "item": "Walnuts",
+              "grams": 3
+            },
+            {
+              "item": "Basil",
+              "grams": 3
+            },
+            {
+              "item": "Roasted Fingerlings",
+              "grams": 176
+            },
+            {
+              "item": "Ketchup",
+              "grams": 50
+            },
+            {
+              "item": "White Miso Risotto",
+              "grams": 300
+            },
+            {
+              "item": "Tofu",
+              "grams": 50
+            }
+          ]
+        },
+        "9": {
+          "location": "SD",
+          "weight": 167.6,
+          "exercise": 300,
+          "exerciseNote": "Jiu Jitsu",
+          "creatine": 5,
+          "meals": [
+            {
+              "item": "Dried Mango",
+              "grams": 40
+            },
+            {
+              "item": "BD Choc Protein Almond Milk",
+              "grams": 190
+            },
+            {
+              "item": "Daves Blueberry Bagel",
+              "grams": 95
+            },
+            {
+              "item": "Whipped Cream Cheese",
+              "grams": 20
+            },
+            {
+              "item": "Bobos Coconut Oat Bar",
+              "grams": 85
+            },
+            {
+              "item": "GW Falafel Mezze",
+              "grams": 460
+            },
+            {
+              "item": "Nigiri Sushi",
+              "grams": 240
+            }
+          ]
+        },
+        "10": {
+          "location": "SD",
+          "weight": 167.6,
+          "exercise": 250,
+          "exerciseNote": "Jiu Jitsu",
+          "meals": [
+            {
+              "item": "Milk",
+              "grams": 50
+            },
+            {
+              "item": "Lemon Scone",
+              "grams": 100
+            },
+            {
+              "item": "Kind Coconut Almond Bar",
+              "grams": 40
+            },
+            {
+              "item": "White Miso Risotto",
+              "grams": 250
+            },
+            {
+              "item": "Milk",
+              "grams": 110
+            },
+            {
+              "item": "Suja Uber Greens",
+              "grams": 325
+            },
+            {
+              "item": "Pietros Pizza",
+              "grams": 170
+            },
+            {
+              "item": "Spaghetti",
+              "grams": 180
+            },
+            {
+              "item": "Meatball",
+              "grams": 40
+            }
+          ]
+        },
+        "11": {
+          "location": "SD",
+          "weight": 167,
+          "exercise": 400,
+          "exerciseNote": "Jiu Jitsu",
+          "creatine": 5,
+          "meals": [
+            {
+              "item": "Daves Blueberry Bagel",
+              "grams": 95
+            },
+            {
+              "item": "Whipped Cream Cheese",
+              "grams": 18
+            },
+            {
+              "item": "Milk",
+              "grams": 106
+            },
+            {
+              "item": "Simply OJ Calcium",
+              "grams": 320
+            },
+            {
+              "item": "Pietros Pizza",
+              "grams": 170
+            },
+            {
+              "item": "Cotija Cheese",
+              "grams": 35
+            },
+            {
+              "item": "Avocado",
+              "grams": 55
+            },
+            {
+              "item": "Coconut Oil",
+              "grams": 4
+            },
+            {
+              "item": "Onion",
+              "grams": 15
+            },
+            {
+              "item": "Egg White",
+              "grams": 150
+            },
+            {
+              "item": "Tomato Salsa",
+              "grams": 80
+            },
+            {
+              "item": "Naked Pea Protein Choc",
+              "grams": 43
+            },
+            {
+              "item": "Cheba Magic Mushroom 8in",
+              "grams": 194
+            },
+            {
+              "item": "Harland Hazy IPA",
+              "grams": 473
+            },
+            {
+              "item": "Handels Ice Cream",
+              "grams": 125
+            },
+            {
+              "item": "Mandarin",
+              "grams": 110
+            }
+          ]
+        },
+        "12": {
+          "location": "SD",
+          "weight": 167.8,
+          "exercise": 500,
+          "exerciseNote": "Jiu Jitsu",
+          "creatine": 5,
+          "meals": [
+            {
+              "item": "Mandarin",
+              "grams": 110
+            },
+            {
+              "item": "Silk Soy Vanilla Unsweet",
+              "grams": 255
+            },
+            {
+              "item": "Naked Pea Protein Choc",
+              "grams": 43
+            },
+            {
+              "item": "Milk",
+              "grams": 100
+            },
+            {
+              "item": "Egg White",
+              "grams": 150
+            },
+            {
+              "item": "Red Bell Pepper",
+              "grams": 25
+            },
+            {
+              "item": "Spinach",
+              "grams": 15
+            },
+            {
+              "item": "Avocado",
+              "grams": 55
+            },
+            {
+              "item": "Cotija Cheese",
+              "grams": 5
+            },
+            {
+              "item": "Roma Tomato",
+              "grams": 30
+            },
+            {
+              "item": "Coconut Oil",
+              "grams": 5
+            },
+            {
+              "item": "Onion",
+              "grams": 25
+            },
+            {
+              "item": "Jalapeno",
+              "grams": 5
+            },
+            {
+              "item": "Baby Bella Mushroom",
+              "grams": 35
+            },
+            {
+              "item": "Dough Ball",
+              "grams": 270
+            },
+            {
+              "item": "Mozzarella Low Fat",
+              "grams": 71
+            },
+            {
+              "item": "SM Tomatoes",
+              "grams": 120
+            },
+            {
+              "item": "Olive Oil",
+              "grams": 15
+            },
+            {
+              "item": "Clif Bar Choc Brownie",
+              "grams": 68
+            },
+            {
+              "item": "Mandarin",
+              "grams": 110
+            },
+            {
+              "item": "Tempeh Penne",
+              "grams": 500
+            },
+            {
+              "item": "Metamucil",
+              "grams": 22
+            },
+            {
+              "item": "Kool aid",
+              "grams": 10
+            }
+          ]
+        },
+        "13": {
+          "location": "SD",
+          "weight": 167.4,
+          "exercise": 500,
+          "exerciseNote": "Physical Therapy + Jiu Jitsu",
+          "creatine": 5,
+          "meals": [
+            {
+              "item": "Egg White",
+              "grams": 150
+            },
+            {
+              "item": "Red Bell Pepper",
+              "grams": 25
+            },
+            {
+              "item": "Spinach",
+              "grams": 15
+            },
+            {
+              "item": "Avocado",
+              "grams": 55
+            },
+            {
+              "item": "Parmesan",
+              "grams": 3
+            },
+            {
+              "item": "Roma Tomato",
+              "grams": 30
+            },
+            {
+              "item": "Coconut Oil",
+              "grams": 5
+            },
+            {
+              "item": "Onion",
+              "grams": 25
+            },
+            {
+              "item": "Jalapeno",
+              "grams": 5
+            },
+            {
+              "item": "Baby Bella Mushroom",
+              "grams": 35
+            },
+            {
+              "item": "Silk Soy Vanilla Unsweet",
+              "grams": 300
+            },
+            {
+              "item": "Naked Pea Protein Choc",
+              "grams": 43
+            },
+            {
+              "item": "Mandarin",
+              "grams": 110
+            },
+            {
+              "item": "Banana",
+              "grams": 118
+            },
+            {
+              "item": "Dough Ball",
+              "grams": 270
+            },
+            {
+              "item": "Mozzarella Low Fat",
+              "grams": 71
+            },
+            {
+              "item": "SM Tomatoes",
+              "grams": 120
+            },
+            {
+              "item": "Olive Oil",
+              "grams": 15
+            },
+            {
+              "item": "Avocado",
+              "grams": 100
+            },
+            {
+              "item": "Almond Butter",
+              "grams": 10
+            },
+            {
+              "item": "Honey",
+              "grams": 8
+            },
+            {
+              "item": "Naked Pea Protein Choc",
+              "grams": 43
+            },
+            {
+              "item": "Banana",
+              "grams": 118
+            },
+            {
+              "item": "Silk Soy Vanilla Unsweet",
+              "grams": 240
+            },
+            {
+              "item": "Chia Seeds",
+              "grams": 3
+            }
+          ]
+        },
+        "14": {
+          "location": "SD",
+          "weight": 166.6,
+          "exercise": 550,
+          "exerciseNote": "Jiu Jitsu",
+          "creatine": 5,
+          "sleep": {
+            "hours": 7.6,
+            "quality": 4,
+            "bedtime": "22:10",
+            "wake": "05:55"
+          },
+          "meals": [
+            {
+              "item": "Egg White",
+              "grams": 170
+            },
+            {
+              "item": "Silk Soy Vanilla Unsweet",
+              "grams": 240
+            },
+            {
+              "item": "Avocado",
+              "grams": 60
+            },
+            {
+              "item": "Milk",
+              "grams": 100
+            },
+            {
+              "item": "Silk Soy Vanilla Unsweet",
+              "grams": 240
+            },
+            {
+              "item": "Blueberries",
+              "grams": 113
+            },
+            {
+              "item": "Honey",
+              "grams": 5
+            },
+            {
+              "item": "Oats",
+              "grams": 60
+            },
+            {
+              "item": "Kodiak Protein Granola",
+              "grams": 20
+            },
+            {
+              "item": "Tempeh Penne",
+              "grams": 500
+            },
+            {
+              "item": "Almond Butter",
+              "grams": 10
+            },
+            {
+              "item": "Low Sodium Soy Sauce",
+              "grams": 10
+            },
+            {
+              "item": "Gochujang",
+              "grams": 2.5
+            },
+            {
+              "item": "White Miso Paste",
+              "grams": 2.5
+            },
+            {
+              "item": "Maple Syrup",
+              "grams": 5
+            },
+            {
+              "item": "Corn Starch",
+              "grams": 16
+            },
+            {
+              "item": "Coconut Oil",
+              "grams": 5
+            },
+            {
+              "item": "Garlic",
+              "grams": 3
+            },
+            {
+              "item": "Tofu",
+              "grams": 340
+            },
+            {
+              "item": "Blueberries",
+              "grams": 57
+            },
+            {
+              "item": "Mandarin",
+              "grams": 100
+            },
+            {
+              "item": "BD Choc Protein Almond Milk",
+              "grams": 220
+            },
+            {
+              "item": "Dough Ball",
+              "grams": 270
+            },
+            {
+              "item": "Mozzarella Low Fat",
+              "grams": 71
+            },
+            {
+              "item": "SM Tomatoes",
+              "grams": 120
+            },
+            {
+              "item": "Olive Oil",
+              "grams": 15
+            }
+          ]
+        },
+        "15": {
+          "location": "SD",
+          "weight": 167.4,
+          "exercise": 0,
+          "sleep": {
+            "hours": 7.5,
+            "quality": 4,
+            "bedtime": "21:25",
+            "wake": "05:30",
+            "meds": true
+          },
+          "meals": [
+            {
+              "item": "Half and Half",
+              "grams": 30
+            },
+            {
+              "item": "Luna Breakfast Wrap",
+              "grams": 350
+            },
+            {
+              "item": "Pretzels",
+              "grams": 24
+            },
+            {
+              "item": "Oreo Cookies",
+              "grams": 23
+            },
+            {
+              "item": "Clif Bar Choc Brownie",
+              "grams": 68
+            },
+            {
+              "item": "Margarita",
+              "grams": 710
+            },
+            {
+              "item": "Red Pepper Rice Plate",
+              "grams": 400
+            },
+            {
+              "item": "Chips and Salsa",
+              "grams": 42
+            }
+          ]
+        },
+        "16": {
+          "location": "NOLA",
+          "weight": 168.2,
+          "exercise": 800,
+          "exerciseNote": "Jiu Jitsu x2 (600+200)",
+          "sleep": {
+            "hours": 8.5,
+            "quality": 2,
+            "bedtime": "20:40",
+            "wake": "08:10"
+          },
+          "meals": [
+            {
+              "item": "Half and Half",
+              "grams": 30
+            },
+            {
+              "item": "Starbucks Blueberry Muffin",
+              "grams": 110
+            },
+            {
+              "item": "Clif Bar Choc Brownie",
+              "grams": 68
+            },
+            {
+              "item": "Daves Blueberry Bagel",
+              "grams": 95
+            },
+            {
+              "item": "Cottage Cheese",
+              "grams": 50
+            },
+            {
+              "item": "Truvani Choc Protein",
+              "grams": 33
+            },
+            {
+              "item": "Silk Soy Vanilla Unsweet",
+              "grams": 240
+            },
+            {
+              "item": "Shrimp Poboy 6in",
+              "grams": 200
+            },
+            {
+              "item": "Red Beans",
+              "grams": 240
+            },
+            {
+              "item": "Jasmine Rice Cooked",
+              "grams": 80
+            },
+            {
+              "item": "Baru Empanadas Domino",
+              "grams": 180
+            },
+            {
+              "item": "Baru Mazorca",
+              "grams": 140
+            },
+            {
+              "item": "Baru Portobello Arepa",
+              "grams": 150
+            }
+          ]
+        },
+        "17": {
+          "location": "NOLA",
+          "weight": 169,
+          "exercise": 400,
+          "exerciseNote": "Jiu Jitsu",
+          "creatine": 5,
+          "sleep": {
+            "hours": 7.6,
+            "quality": 5,
+            "bedtime": "23:20",
+            "wake": "07:55"
+          },
+          "meals": [
+            {
+              "item": "Carrot Juice",
+              "grams": 355
+            },
+            {
+              "item": "Silk Soy Vanilla Unsweet",
+              "grams": 150
+            },
+            {
+              "item": "Ezekiel Cinnamon Raisin Cereal",
+              "grams": 120
+            },
+            {
+              "item": "Silk Soy Vanilla Unsweet",
+              "grams": 180
+            },
+            {
+              "item": "Truvani Choc Protein",
+              "grams": 33
+            },
+            {
+              "item": "Dough Ball",
+              "grams": 270
+            },
+            {
+              "item": "Mozzarella Low Fat",
+              "grams": 113
+            },
+            {
+              "item": "SM Tomatoes",
+              "grams": 227
+            },
+            {
+              "item": "Olive Oil",
+              "grams": 28
+            },
+            {
+              "item": "Pistachio Cannoli",
+              "grams": 80
+            },
+            {
+              "item": "Tofu Banh Mi No Sauce",
+              "grams": 250
+            },
+            {
+              "item": "Fried Tofu",
+              "grams": 198
+            }
+          ]
+        },
+        "18": {
+          "location": "NOLA",
+          "weight": 167.2,
+          "exercise": 750,
+          "exerciseNote": "Jiu Jitsu Open Mat",
+          "creatine": 5,
+          "sleep": {
+            "hours": 9.1,
+            "quality": 5,
+            "bedtime": "23:10",
+            "wake": "08:50"
+          },
+          "meals": [
+            {
+              "item": "Truvani Choc Protein",
+              "grams": 33
+            },
+            {
+              "item": "Daves Blueberry Bagel",
+              "grams": 95
+            },
+            {
+              "item": "Milk",
+              "grams": 100
+            },
+            {
+              "item": "Cottage Cheese",
+              "grams": 113
+            },
+            {
+              "item": "Hush Puppies",
+              "grams": 40
+            },
+            {
+              "item": "Fried Chicken Thigh",
+              "grams": 260
+            },
+            {
+              "item": "Chocolate Cream Snowball",
+              "grams": 355
+            },
+            {
+              "item": "Kind Coconut Almond Bar",
+              "grams": 40
+            },
+            {
+              "item": "Harland Hazy IPA",
+              "grams": 473
+            },
+            {
+              "item": "White Corn Tortillas",
+              "grams": 60
+            },
+            {
+              "item": "Grilled Chicken",
+              "grams": 100
+            },
+            {
+              "item": "Sweet Potato Fries",
+              "grams": 170
+            },
+            {
+              "item": "Ketchup",
+              "grams": 28
+            },
+            {
+              "item": "King Cake Cinnamon",
+              "grams": 100
+            }
+          ]
+        },
+        "19": {
+          "location": "NOLA",
+          "weight": 167.2,
+          "exercise": 800,
+          "exerciseNote": "Jiu Jitsu",
+          "creatine": 5,
+          "sleep": {
+            "hours": 8.4,
+            "quality": 3,
+            "bedtime": "23:10",
+            "wake": "08:10"
+          },
+          "meals": [
+            {
+              "item": "Truvani Choc Protein",
+              "grams": 33
+            },
+            {
+              "item": "Daily Beet Rainbow Bowl",
+              "grams": 400
+            },
+            {
+              "item": "Homemade Choc Chip Cookie",
+              "grams": 112
+            },
+            {
+              "item": "King Cake Cinnamon",
+              "grams": 80
+            },
+            {
+              "item": "Sushi Maki Roll",
+              "grams": 360
+            },
+            {
+              "item": "Fried Tofu",
+              "grams": 198
+            },
+            {
+              "item": "Teriyaki Sauce",
+              "grams": 10
+            },
+            {
+              "item": "Carrot Juice",
+              "grams": 355
+            },
+            {
+              "item": "Silk Soy Vanilla Unsweet",
+              "grams": 240
+            },
+            {
+              "item": "Milk",
+              "grams": 90
+            },
+            {
+              "item": "Coconut Water",
+              "grams": 240
+            },
+            {
+              "item": "Plant Protein Drink",
+              "grams": 473
+            }
+          ]
+        },
+        "20": {
+          "location": "NOLA",
+          "weight": 168,
+          "exercise": 500,
+          "exerciseNote": "Jiu Jitsu",
+          "creatine": 5,
+          "sleep": {
+            "hours": 9.1,
+            "quality": 3,
+            "bedtime": "22:55",
+            "wake": "08:25"
+          },
+          "meals": [
+            {
+              "item": "Carrot Juice",
+              "grams": 180
+            },
+            {
+              "item": "Milk",
+              "grams": 90
+            },
+            {
+              "item": "Beignet",
+              "grams": 135
+            },
+            {
+              "item": "Daves Blueberry Bagel",
+              "grams": 95
+            },
+            {
+              "item": "Cottage Cheese",
+              "grams": 80
+            },
+            {
+              "item": "Silk Soy Vanilla Unsweet",
+              "grams": 240
+            },
+            {
+              "item": "Truvani Choc Protein",
+              "grams": 33
+            },
+            {
+              "item": "Cava Pita HHC",
+              "grams": 450
+            },
+            {
+              "item": "Margarita Half Sugar",
+              "grams": 710
+            },
+            {
+              "item": "Tequila",
+              "grams": 22
+            },
+            {
+              "item": "Chips Queso Guac 25pct",
+              "grams": 100
+            },
+            {
+              "item": "Vals Shrimp Taco",
+              "grams": 120
+            },
+            {
+              "item": "Vals Cauliflower Taco",
+              "grams": 110
+            },
+            {
+              "item": "Vals Sweet Potato Taco",
+              "grams": 120
+            }
+          ]
+        },
+        "21": {
+          "location": "NOLA",
+          "weight": 170.8,
+          "exercise": 0,
+          "sleep": {
+            "hours": 9,
+            "quality": 3,
+            "bedtime": "23:00",
+            "wake": "08:30"
+          },
+          "meals": [
+            {
+              "item": "PE Vanilla Pecan Oatmeal",
+              "grams": 58
+            },
+            {
+              "item": "Ezekiel Cinnamon Raisin Cereal",
+              "grams": 50
+            },
+            {
+              "item": "Silk Soy Vanilla Unsweet",
+              "grams": 160
+            },
+            {
+              "item": "Milk",
+              "grams": 100
+            },
+            {
+              "item": "Bobos Strawberry Oat Bar",
+              "grams": 76
+            },
+            {
+              "item": "Bobbys Veggie Burger",
+              "grams": 250
+            },
+            {
+              "item": "Sweet Potato Fries",
+              "grams": 181
+            },
+            {
+              "item": "Cava Pita Plain",
+              "grams": 80
+            },
+            {
+              "item": "Synergy Kombucha",
+              "grams": 473
+            },
+            {
+              "item": "Ketchup",
+              "grams": 56
+            },
+            {
+              "item": "Daves Blueberry Bagel",
+              "grams": 95
+            },
+            {
+              "item": "Whipped Cream Cheese",
+              "grams": 32
+            }
+          ]
+        },
+        "22": {
+          "location": "SD",
+          "weight": 171.6,
+          "exercise": 600,
+          "exerciseNote": "Jiu Jitsu",
+          "creatine": 5,
+          "sleep": {
+            "hours": 5.9,
+            "quality": 2,
+            "bedtime": "22:40",
+            "wake": "06:00"
+          },
+          "nap": {
+            "hours": 1,
+            "time": "15:00"
+          },
+          "meals": [
+            {
+              "item": "Milk",
+              "grams": 340
+            },
+            {
+              "item": "Truvani Choc Protein",
+              "grams": 33
+            },
+            {
+              "item": "Clementine",
+              "grams": 90
+            },
+            {
+              "item": "Tempeh Penne",
+              "grams": 350
+            },
+            {
+              "item": "Tempeh Penne",
+              "grams": 300
+            },
+            {
+              "item": "Flour Tortilla Large",
+              "grams": 100
+            },
+            {
+              "item": "Black Beans",
+              "grams": 300
+            },
+            {
+              "item": "Daves Blueberry Bagel",
+              "grams": 95
+            },
+            {
+              "item": "Whipped Cream Cheese",
+              "grams": 32
+            }
+          ]
+        },
+        "23": {
+          "location": "SD",
+          "weight": null,
+          "exercise": 600,
+          "exerciseNote": "Jiu Jitsu",
+          "creatine": 5,
+          "sleep": {
+            "hours": 9,
+            "quality": 5,
+            "bedtime": "21:30",
+            "wake": "06:30",
+            "meds": true
+          },
+          "meals": [
+            {
+              "item": "Milk",
+              "grams": 100
+            },
+            {
+              "item": "Milk",
+              "grams": 240
+            },
+            {
+              "item": "Truvani Choc Protein",
+              "grams": 33
+            },
+            {
+              "item": "Sourdough Bread",
+              "grams": 144
+            },
+            {
+              "item": "Red Beans",
+              "grams": 380
+            },
+            {
+              "item": "Clif Bar WC Macadamia",
+              "grams": 68
+            }
+          ]
+        }
+      }
+    },
+    "oct2025": {
+      "label": "Oct 2025",
+      "days": {
+        "15": {
+          "location": "SD",
+          "weight": 177.4,
+          "exercise": 250,
+          "exerciseNote": "Physical Therapy 1.5 hours",
+          "meals": [
+            {
+              "item": "Oats",
+              "grams": 60
+            },
+            {
+              "item": "Milk",
+              "grams": 240
+            },
+            {
+              "item": "Honey",
+              "grams": 5
+            },
+            {
+              "item": "Chia Seeds",
+              "grams": 5
+            },
+            {
+              "item": "Blueberries",
+              "grams": 80
+            },
+            {
+              "item": "Pizza",
+              "grams": 440
+            },
+            {
+              "item": "Metamucil",
+              "grams": 33
+            },
+            {
+              "item": "Milk",
+              "grams": 40
+            },
+            {
+              "item": "Granola",
+              "grams": 30
+            }
+          ]
+        },
+        "16": {
+          "location": "NOLA",
+          "weight": 175.6,
+          "exercise": 250,
+          "exerciseNote": "Physical Therapy 1.5 hours",
+          "meals": [
+            {
+              "item": "Bagel",
+              "grams": 95
+            },
+            {
+              "item": "Whipped Cream Cheese",
+              "grams": 32
+            },
+            {
+              "item": "Oats",
+              "grams": 60
+            },
+            {
+              "item": "Milk",
+              "grams": 240
+            },
+            {
+              "item": "Honey",
+              "grams": 5
+            },
+            {
+              "item": "Chia Seeds",
+              "grams": 5
+            },
+            {
+              "item": "Blueberries",
+              "grams": 80
+            },
+            {
+              "item": "Milk",
+              "grams": 40
+            },
+            {
+              "item": "Silk Vanilla Protein",
+              "grams": 330
+            },
+            {
+              "item": "Pizza",
+              "grams": 440
+            },
+            {
+              "item": "Metamucil",
+              "grams": 33
+            }
+          ]
+        },
+        "17": {
+          "location": "NOLA",
+          "weight": 175.2,
+          "exercise": 0,
+          "meals": [
+            {
+              "item": "Bagel",
+              "grams": 95
+            },
+            {
+              "item": "Whipped Cream Cheese",
+              "grams": 32
+            },
+            {
+              "item": "Oats",
+              "grams": 60
+            },
+            {
+              "item": "Milk",
+              "grams": 240
+            },
+            {
+              "item": "Honey",
+              "grams": 5
+            },
+            {
+              "item": "Chia Seeds",
+              "grams": 5
+            },
+            {
+              "item": "Blueberries",
+              "grams": 80
+            },
+            {
+              "item": "Milk",
+              "grams": 40
+            },
+            {
+              "item": "Silk Vanilla Protein",
+              "grams": 330
+            },
+            {
+              "item": "Pizza",
+              "grams": 440
+            },
+            {
+              "item": "KA Buns",
+              "grams": 90
+            },
+            {
+              "item": "Metamucil",
+              "grams": 33
+            },
+            {
+              "item": "Tempeh Slider",
+              "grams": 80
+            },
+            {
+              "item": "Avocado",
+              "grams": 80
+            },
+            {
+              "item": "Kinders BBQ Sauce",
+              "grams": 16
+            },
+            {
+              "item": "Ketchup",
+              "grams": 20
+            }
+          ]
+        },
+        "18": {
+          "location": "NOLA",
+          "weight": 175.8,
+          "exercise": 500,
+          "exerciseNote": "Surf 1.5 hours bodyboard",
+          "meals": [
+            {
+              "item": "Whipped Cream Cheese",
+              "grams": 32
+            },
+            {
+              "item": "Cheddar Cheese",
+              "grams": 16
+            },
+            {
+              "item": "Milk",
+              "grams": 40
+            },
+            {
+              "item": "Silk Vanilla Protein",
+              "grams": 240
+            },
+            {
+              "item": "KA Buns",
+              "grams": 240
+            },
+            {
+              "item": "Metamucil",
+              "grams": 33
+            },
+            {
+              "item": "Kool aid",
+              "grams": 9
+            },
+            {
+              "item": "Tempeh Slider",
+              "grams": 160
+            },
+            {
+              "item": "Avocado",
+              "grams": 100
+            },
+            {
+              "item": "Kinders BBQ Sauce",
+              "grams": 16
+            },
+            {
+              "item": "SM Tomatoes",
+              "grams": 40
+            },
+            {
+              "item": "Ketchup",
+              "grams": 20
+            },
+            {
+              "item": "Fried Chicken Thigh",
+              "grams": 65
+            }
+          ]
+        },
+        "19": {
+          "location": "SD",
+          "weight": 174.6,
+          "exercise": 500,
+          "exerciseNote": "Surf 1.5 hours at Blacks",
+          "meals": [
+            {
+              "item": "Bagel",
+              "grams": 95
+            },
+            {
+              "item": "Whipped Cream Cheese",
+              "grams": 32
+            },
+            {
+              "item": "Orange Juice",
+              "grams": 320
+            },
+            {
+              "item": "Thai Curry",
+              "grams": 283
+            },
+            {
+              "item": "Fried Salmon",
+              "grams": 48
+            },
+            {
+              "item": "Jasmine Rice",
+              "grams": 336
+            },
+            {
+              "item": "Kool aid",
+              "grams": 9
+            },
+            {
+              "item": "KA Buns",
+              "grams": 100
+            },
+            {
+              "item": "Black Bean Corn Burger",
+              "grams": 157
+            },
+            {
+              "item": "Ketchup",
+              "grams": 20
+            },
+            {
+              "item": "Avocado",
+              "grams": 100
+            },
+            {
+              "item": "Cheddar Cheese",
+              "grams": 16
+            },
+            {
+              "item": "Metamucil",
+              "grams": 33
+            },
+            {
+              "item": "Kool aid",
+              "grams": 9
+            },
+            {
+              "item": "Milk",
+              "grams": 40
+            },
+            {
+              "item": "Mandarin",
+              "grams": 88
+            }
+          ]
+        },
+        "21": {
+          "weight": 172.2,
+          "exercise": 700,
+          "exerciseNote": "Heavy surf session",
+          "meals": [
+            {
+              "item": "Bagel",
+              "grams": 95
+            },
+            {
+              "item": "Whipped Cream Cheese",
+              "grams": 32
+            },
+            {
+              "item": "Milk",
+              "grams": 60
+            },
+            {
+              "item": "KA Buns",
+              "grams": 150
+            },
+            {
+              "item": "Turkey",
+              "grams": 100
+            },
+            {
+              "item": "Olive Oil",
+              "grams": 20
+            },
+            {
+              "item": "Avocado",
+              "grams": 100
+            },
+            {
+              "item": "Cheddar Cheese",
+              "grams": 32
+            },
+            {
+              "item": "Thai Curry",
+              "grams": 360
+            },
+            {
+              "item": "Silk Vanilla Protein",
+              "grams": 240
+            },
+            {
+              "item": "Granola",
+              "grams": 42
+            },
+            {
+              "item": "Synergy Kombucha",
+              "grams": 473
+            },
+            {
+              "item": "Rice Noodles",
+              "grams": 100
+            },
+            {
+              "item": "Granola",
+              "grams": 42
+            },
+            {
+              "item": "Oats",
+              "grams": 20
+            },
+            {
+              "item": "Blueberries",
+              "grams": 50
+            }
+          ]
+        },
+        "22": {
+          "weight": 172.8,
+          "exercise": 600,
+          "meals": [
+            {
+              "item": "Bagel",
+              "grams": 95
+            },
+            {
+              "item": "Whipped Cream Cheese",
+              "grams": 32
+            },
+            {
+              "item": "Milk",
+              "grams": 60
+            },
+            {
+              "item": "KA Buns Reduced Fat",
+              "grams": 200
+            },
+            {
+              "item": "Avocado",
+              "grams": 100
+            },
+            {
+              "item": "Cheddar Cheese",
+              "grams": 32
+            },
+            {
+              "item": "Thai Curry",
+              "grams": 360
+            },
+            {
+              "item": "Silk Vanilla Protein",
+              "grams": 120
+            },
+            {
+              "item": "Granola",
+              "grams": 60
+            },
+            {
+              "item": "Oats",
+              "grams": 60
+            },
+            {
+              "item": "Blueberries",
+              "grams": 60
+            },
+            {
+              "item": "Chia Seeds",
+              "grams": 5
+            },
+            {
+              "item": "Honey",
+              "grams": 5
+            },
+            {
+              "item": "Kinders BBQ Sauce",
+              "grams": 15
+            },
+            {
+              "item": "Ketchup",
+              "grams": 25
+            },
+            {
+              "item": "Black Bean Corn Burger",
+              "grams": 157
+            },
+            {
+              "item": "Silk Unsweet Almond Milk",
+              "grams": 120
+            },
+            {
+              "item": "Coconut Water",
+              "grams": 330
+            },
+            {
+              "item": "White Miso Risotto",
+              "grams": 170
+            },
+            {
+              "item": "Daves White Bread",
+              "grams": 39
+            },
+            {
+              "item": "Red Beans",
+              "grams": 260
+            }
+          ]
+        },
+        "23": {
+          "weight": 171.3,
+          "exercise": 350,
+          "meals": [
+            {
+              "item": "Bagel",
+              "grams": 190
+            },
+            {
+              "item": "Whipped Cream Cheese",
+              "grams": 50
+            },
+            {
+              "item": "Milk",
+              "grams": 50
+            },
+            {
+              "item": "KA Buns Reduced Fat",
+              "grams": 100
+            },
+            {
+              "item": "Avocado",
+              "grams": 60
+            },
+            {
+              "item": "Diet Pizza Dough",
+              "grams": 116.5
+            },
+            {
+              "item": "Silk Vanilla Protein",
+              "grams": 190
+            },
+            {
+              "item": "Mandarin",
+              "grams": 176
+            },
+            {
+              "item": "Banana",
+              "grams": 101
+            },
+            {
+              "item": "Avocado",
+              "grams": 60
+            },
+            {
+              "item": "Sweet Potato Burger",
+              "grams": 204
+            },
+            {
+              "item": "SM Tomatoes",
+              "grams": 100
+            },
+            {
+              "item": "Olive Oil",
+              "grams": 14
+            },
+            {
+              "item": "Mozzarella Low Fat",
+              "grams": 24
+            }
+          ]
+        },
+        "24": {
+          "weight": 170,
+          "exercise": 500,
+          "meals": [
+            {
+              "item": "Bagel",
+              "grams": 90
+            },
+            {
+              "item": "Whipped Cream Cheese",
+              "grams": 50
+            },
+            {
+              "item": "Milk",
+              "grams": 50
+            },
+            {
+              "item": "Orange Juice",
+              "grams": 110
+            },
+            {
+              "item": "Banana",
+              "grams": 110
+            },
+            {
+              "item": "Avocado",
+              "grams": 60
+            },
+            {
+              "item": "Sweet Potato Burger",
+              "grams": 204
+            },
+            {
+              "item": "KA Buns Reduced Fat",
+              "grams": 100
+            },
+            {
+              "item": "Mozzarella Low Fat",
+              "grams": 24
+            },
+            {
+              "item": "Ketchup",
+              "grams": 20
+            },
+            {
+              "item": "Kinders BBQ Sauce",
+              "grams": 30
+            },
+            {
+              "item": "Coconut Water",
+              "grams": 330
+            },
+            {
+              "item": "White Miso Risotto",
+              "grams": 170
+            },
+            {
+              "item": "Daves White Bread",
+              "grams": 39
+            },
+            {
+              "item": "Red Beans",
+              "grams": 260
+            },
+            {
+              "item": "Diet Pizza Dough",
+              "grams": 233
+            },
+            {
+              "item": "SM Tomatoes",
+              "grams": 150
+            },
+            {
+              "item": "Olive Oil",
+              "grams": 28
+            },
+            {
+              "item": "Mozzarella Low Fat",
+              "grams": 40
+            }
+          ]
+        },
+        "25": {
+          "location": "SD",
+          "weight": 169.3,
+          "exercise": 500,
+          "meals": [
+            {
+              "item": "Bagel",
+              "grams": 90
+            },
+            {
+              "item": "Whipped Cream Cheese",
+              "grams": 50
+            },
+            {
+              "item": "Milk",
+              "grams": 50
+            },
+            {
+              "item": "Orange Juice",
+              "grams": 110
+            },
+            {
+              "item": "Banana",
+              "grams": 110
+            },
+            {
+              "item": "Avocado",
+              "grams": 60
+            },
+            {
+              "item": "Sweet Potato Burger",
+              "grams": 204
+            },
+            {
+              "item": "KA Buns Reduced Fat",
+              "grams": 100
+            },
+            {
+              "item": "Mozzarella Low Fat",
+              "grams": 24
+            },
+            {
+              "item": "Ketchup",
+              "grams": 20
+            },
+            {
+              "item": "Kinders BBQ Sauce",
+              "grams": 30
+            },
+            {
+              "item": "Coconut Water",
+              "grams": 330
+            },
+            {
+              "item": "White Miso Risotto",
+              "grams": 170
+            },
+            {
+              "item": "Daves White Bread",
+              "grams": 39
+            },
+            {
+              "item": "Red Beans",
+              "grams": 260
+            },
+            {
+              "item": "Daves Whole Grains Bread",
+              "grams": 45
+            },
+            {
+              "item": "Red Beans",
+              "grams": 300
+            },
+            {
+              "item": "Silk Vanilla Protein",
+              "grams": 240
+            },
+            {
+              "item": "Chocolate Granola",
+              "grams": 72
+            }
+          ]
+        },
+        "26": {
+          "location": "SD",
+          "weight": 169.6,
+          "exercise": 0,
+          "meals": [
+            {
+              "item": "Japanese Pancakes",
+              "grams": 189
+            },
+            {
+              "item": "Blueberries",
+              "grams": 100
+            },
+            {
+              "item": "Red Beans",
+              "grams": 300
+            },
+            {
+              "item": "Daves Whole Grains Bread",
+              "grams": 90
+            },
+            {
+              "item": "Hot coco mix",
+              "grams": 20
+            },
+            {
+              "item": "Silk Vanilla Protein",
+              "grams": 240
+            },
+            {
+              "item": "Dutch Process Cocoa",
+              "grams": 14
+            },
+            {
+              "item": "Avocado",
+              "grams": 116
+            },
+            {
+              "item": "Honey",
+              "grams": 21
+            }
+          ]
+        },
+        "27": {
+          "location": "SD",
+          "weight": 167.6,
+          "exercise": 0,
+          "meals": [
+            {
+              "item": "Tofu Beef Tacos",
+              "grams": 200
+            },
+            {
+              "item": "White Corn Tortillas",
+              "grams": 68
+            },
+            {
+              "item": "SM Tomatoes",
+              "grams": 50
+            },
+            {
+              "item": "Queso Fresco",
+              "grams": 60
+            },
+            {
+              "item": "Avocado",
+              "grams": 40
+            },
+            {
+              "item": "Japanese Pancakes",
+              "grams": 189
+            },
+            {
+              "item": "Milk",
+              "grams": 40
+            },
+            {
+              "item": "Honey",
+              "grams": 21
+            },
+            {
+              "item": "Silk Vanilla Protein",
+              "grams": 240
+            },
+            {
+              "item": "Dutch Process Cocoa",
+              "grams": 7
+            },
+            {
+              "item": "Avocado",
+              "grams": 116
+            },
+            {
+              "item": "Whey Powder, Chocolate",
+              "grams": 20
+            },
+            {
+              "item": "Blueberries",
+              "grams": 200
+            }
+          ]
+        },
+        "28": {
+          "location": "SD",
+          "weight": 168.8,
+          "exercise": 0,
+          "meals": [
+            {
+              "item": "Bagel",
+              "grams": 90
+            },
+            {
+              "item": "Whipped Cream Cheese",
+              "grams": 50
+            },
+            {
+              "item": "Milk",
+              "grams": 50
+            },
+            {
+              "item": "White Corn Tortillas",
+              "grams": 90
+            },
+            {
+              "item": "Tofu Beef Tacos",
+              "grams": 100
+            },
+            {
+              "item": "Tofu",
+              "grams": 100
+            },
+            {
+              "item": "Avocado",
+              "grams": 55
+            },
+            {
+              "item": "Roma Tomato",
+              "grams": 65
+            },
+            {
+              "item": "Diet Pizza Dough",
+              "grams": 233
+            },
+            {
+              "item": "SM Tomatoes",
+              "grams": 150
+            },
+            {
+              "item": "Olive Oil",
+              "grams": 28
+            },
+            {
+              "item": "Mozzarella Low Fat",
+              "grams": 40
+            }
+          ]
+        },
+        "29": {
+          "location": "SD",
+          "weight": 168,
+          "exercise": 0,
+          "meals": [
+            {
+              "item": "Synergy Kombucha",
+              "grams": 473
+            },
+            {
+              "item": "Pancakes, Diet",
+              "grams": 228
+            },
+            {
+              "item": "Diet Pizza Dough",
+              "grams": 280
+            },
+            {
+              "item": "SM Tomatoes",
+              "grams": 150
+            },
+            {
+              "item": "Olive Oil",
+              "grams": 14
+            },
+            {
+              "item": "Mozzarella Low Fat",
+              "grams": 40
+            },
+            {
+              "item": "Silk Vanilla Protein",
+              "grams": 240
+            },
+            {
+              "item": "Dutch Process Cocoa",
+              "grams": 7
+            },
+            {
+              "item": "Avocado",
+              "grams": 116
+            },
+            {
+              "item": "Whey Powder, Chocolate",
+              "grams": 20
+            },
+            {
+              "item": "Blueberries",
+              "grams": 130
+            }
+          ]
+        },
+        "30": {
+          "weight": 167.2,
+          "exercise": 0,
+          "meals": [
+            {
+              "item": "Milk",
+              "grams": 60
+            },
+            {
+              "item": "Pancakes, Diet",
+              "grams": 228
+            },
+            {
+              "item": "Tofu",
+              "grams": 160
+            },
+            {
+              "item": "White Corn Tortillas",
+              "grams": 120
+            },
+            {
+              "item": "Mozzarella Low Fat",
+              "grams": 30
+            },
+            {
+              "item": "Avocado",
+              "grams": 90
+            },
+            {
+              "item": "SM Tomatoes",
+              "grams": 80
+            },
+            {
+              "item": "KA Buns Reduced Fat",
+              "grams": 100
+            },
+            {
+              "item": "KA Buns Reduced Fat",
+              "grams": 100
+            },
+            {
+              "item": "Black Bean Corn Burger",
+              "grams": 157
+            },
+            {
+              "item": "Avocado",
+              "grams": 90
+            },
+            {
+              "item": "Mozzarella Low Fat",
+              "grams": 30
+            },
+            {
+              "item": "Ketchup",
+              "grams": 20
+            },
+            {
+              "item": "Kinders BBQ Sauce",
+              "grams": 30
+            },
+            {
+              "item": "Coconut Water",
+              "grams": 330
+            },
+            {
+              "item": "White Miso Risotto",
+              "grams": 170
+            },
+            {
+              "item": "Daves White Bread",
+              "grams": 39
+            },
+            {
+              "item": "Red Beans",
+              "grams": 260
+            }
+          ]
+        },
+        "31": {
+          "weight": 168.2,
+          "exercise": 500,
+          "exerciseNote": "",
+          "meals": [
+            {
+              "item": "Milk",
+              "grams": 60
+            },
+            {
+              "item": "Pancakes, Diet",
+              "grams": 228
+            },
+            {
+              "item": "Bagel",
+              "grams": 95
+            },
+            {
+              "item": "Whipped Cream Cheese",
+              "grams": 25
+            },
+            {
+              "item": "Woodstock Pizza",
+              "grams": 585
+            }
+          ]
+        }
+      }
+    }
+  }
+}

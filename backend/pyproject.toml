@@ -1,0 +1,35 @@
+[tool.poetry]
+name = "meal-tracker-backend"
+version = "0.1.0"
+description = "Meal tracker backend API"
+authors = ["Javin Lacson"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.14"
+django = "^6.0.4"
+djangorestframework = "^3.17.1"
+psycopg2-binary = "^2.9.12"
+python-dotenv = "^1.2.2"
+django-cors-headers = "^4.9.0"
+djangorestframework-simplejwt = "^5.5.1"
+django-axes = "^8.3.1"
+drf-spectacular = "^0.29.0"
+
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^9.0.3"
+pytest-django = "^4.12.0"
+pytest-cov = "^7.1.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.pytest.ini_options]
+DJANGO_SETTINGS_MODULE = "config.settings"
+python_files = ["test_*.py", "*_test.py"]
+addopts = "-ra --strict-markers"
+filterwarnings = [
+    "ignore::DeprecationWarning",
+]
