@@ -22,9 +22,12 @@ import {
   useDeleteMeal,
   useToday,
   useUpdateMeal,
+  type Day,
   type DaySummary,
   type MealItem,
 } from "./api";
+import { DayFieldsPanel } from "./DayFieldsPanel";
+import { ExercisePanel } from "./ExercisePanel";
 
 function fmt(n: number | undefined | null, digits = 1): string {
   if (n == null || !isFinite(n)) return "—";
@@ -44,10 +47,12 @@ function StatCard({ label, value, color }: { label: string; value: string; color
   );
 }
 
-function SummaryCards({ summary }: { summary: DaySummary }) {
+function SummaryCards({ day, summary }: { day: Day; summary: DaySummary }) {
   const net = Math.abs(summary.net_calories);
+  const weight = day.weight_lbs != null ? Number(day.weight_lbs) : null;
   return (
     <SimpleGrid cols={{ base: 2, sm: 3, md: 6 }}>
+      <StatCard label="Weight" value={weight != null ? fmt(weight, 1) : "—"} />
       <StatCard label="BMR" value={summary.bmr.toLocaleString()} />
       <StatCard label="Exercise" value={summary.exercise_calories.toLocaleString()} />
       <StatCard label="Allowed" value={summary.allowed_calories.toLocaleString()} />
@@ -56,10 +61,6 @@ function SummaryCards({ summary }: { summary: DaySummary }) {
         label={summary.is_surplus ? "Surplus" : "Deficit"}
         value={fmt(net, 0)}
         color={summary.is_surplus ? "red" : "green"}
-      />
-      <StatCard
-        label="Protein %"
-        value={summary.macros.protein_pct != null ? `${(summary.macros.protein_pct * 100).toFixed(1)}%` : "—"}
       />
     </SimpleGrid>
   );
@@ -220,7 +221,7 @@ function AddMealForm({ dayId, onAdded }: { dayId: string; onAdded: () => void })
           loading={create.isPending}
           disabled={!foodId || typeof grams !== "number" || grams <= 0}
         >
-          Add
+          Add meal
         </Button>
       </Group>
     </Paper>
@@ -281,7 +282,9 @@ export function DayDetailPage() {
 
       {day && summary && (
         <>
-          <SummaryCards summary={summary} />
+          <SummaryCards day={day} summary={summary} />
+          <DayFieldsPanel day={day} onSaved={() => dayQ.refetch()} />
+          <ExercisePanel day={day} onChanged={() => dayQ.refetch()} />
           <AddMealForm dayId={day.id} onAdded={() => dayQ.refetch()} />
           <Paper withBorder radius="md" style={{ overflowX: "auto" }}>
             <Table ff="monospace" fz="sm" withRowBorders={false}>

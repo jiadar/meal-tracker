@@ -1,6 +1,15 @@
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { apiGet, apiPost, apiPatch, apiClient } from "@/lib/apiClient";
 
+export interface ExerciseLog {
+  id: string;
+  day: string;
+  activity: string;
+  duration_minutes: number | null;
+  calories: number;
+  position?: number;
+}
+
 export interface MealItem {
   id: string;
   day: string;
@@ -39,7 +48,7 @@ export interface Day {
   meals: MealItem[];
   sleep: unknown;
   nap: unknown;
-  exercises: unknown[];
+  exercises: ExerciseLog[];
   summary: DaySummary;
   created_at: string;
   updated_at: string;
@@ -83,6 +92,65 @@ export function useCreateDay() {
   return useMutation({
     mutationFn: (data: { date: string; location?: string }) =>
       apiPost<Day>("/days/", data),
+    onSuccess: () => {
+      qc.invalidateQueries({ queryKey: DAYS_KEY });
+    },
+  });
+}
+
+export interface DayPatch {
+  location?: string;
+  weight_lbs?: string | null;
+  creatine_mg?: number | null;
+}
+
+export function useUpdateDay() {
+  const qc = useQueryClient();
+  return useMutation({
+    mutationFn: ({ id, data }: { id: string; data: DayPatch }) =>
+      apiPatch<Day>(`/days/${id}/`, data),
+    onSuccess: () => {
+      qc.invalidateQueries({ queryKey: DAYS_KEY });
+    },
+  });
+}
+
+export function useCreateExercise() {
+  const qc = useQueryClient();
+  return useMutation({
+    mutationFn: (data: {
+      day: string;
+      activity: string;
+      duration_minutes?: number | null;
+      calories: number;
+    }) => apiPost<ExerciseLog>("/exercise-logs/", data),
+    onSuccess: () => {
+      qc.invalidateQueries({ queryKey: DAYS_KEY });
+    },
+  });
+}
+
+export function useUpdateExercise() {
+  const qc = useQueryClient();
+  return useMutation({
+    mutationFn: ({
+      id,
+      data,
+    }: {
+      id: string;
+      data: Partial<{ activity: string; duration_minutes: number | null; calories: number }>;
+    }) => apiPatch<ExerciseLog>(`/exercise-logs/${id}/`, data),
+    onSuccess: () => {
+      qc.invalidateQueries({ queryKey: DAYS_KEY });
+    },
+  });
+}
+
+export function useDeleteExercise() {
+  const qc = useQueryClient();
+  return useMutation({
+    mutationFn: (id: string) =>
+      apiClient<void>({ url: `/exercise-logs/${id}/`, method: "DELETE" }),
     onSuccess: () => {
       qc.invalidateQueries({ queryKey: DAYS_KEY });
     },
