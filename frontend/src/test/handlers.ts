@@ -137,6 +137,19 @@ export interface TestState {
   nextExerciseId: number;
   nextSleepId: number;
   nextNapId: number;
+  nextGoalId: number;
+  weightGoals: WeightGoalFixture[];
+}
+
+export interface WeightGoalFixture {
+  id: string;
+  start_date: string;
+  end_date: string;
+  start_weight: string;
+  goal_weight: string;
+  active: boolean;
+  created_at: string;
+  updated_at: string;
 }
 
 const DEFAULT_FOOD: Omit<FoodFixture, "id" | "name" | "calories"> = {
@@ -293,6 +306,8 @@ export function createTestState(overrides: Partial<TestState> = {}): TestState {
     nextExerciseId: 1,
     nextSleepId: 1,
     nextNapId: 1,
+    nextGoalId: 1,
+    weightGoals: [],
     ...overrides,
   };
 }
@@ -658,6 +673,42 @@ export function buildHandlers(state: TestState) {
         weight,
         sleep,
       });
+    }),
+
+    http.get(`${API_BASE}/weight-goals/`, () =>
+      HttpResponse.json(paginated(state.weightGoals)),
+    ),
+
+    http.post(`${API_BASE}/weight-goals/`, async ({ request }) => {
+      const body = (await request.json()) as Partial<WeightGoalFixture>;
+      const now = new Date().toISOString();
+      const goal: WeightGoalFixture = {
+        id: `goal-${state.nextGoalId++}`,
+        start_date: body.start_date ?? "",
+        end_date: body.end_date ?? "",
+        start_weight: body.start_weight ?? "0",
+        goal_weight: body.goal_weight ?? "0",
+        active: body.active ?? true,
+        created_at: now,
+        updated_at: now,
+      };
+      state.weightGoals.push(goal);
+      return HttpResponse.json(goal, { status: 201 });
+    }),
+
+    http.patch(`${API_BASE}/weight-goals/:id/`, async ({ request, params }) => {
+      const body = (await request.json()) as Partial<WeightGoalFixture>;
+      const goal = state.weightGoals.find((g) => g.id === params.id);
+      if (!goal) return HttpResponse.json({ detail: "not found" }, { status: 404 });
+      Object.assign(goal, body, { updated_at: new Date().toISOString() });
+      return HttpResponse.json(goal);
+    }),
+
+    http.delete(`${API_BASE}/weight-goals/:id/`, ({ params }) => {
+      const idx = state.weightGoals.findIndex((g) => g.id === params.id);
+      if (idx < 0) return HttpResponse.json({ detail: "not found" }, { status: 404 });
+      state.weightGoals.splice(idx, 1);
+      return new HttpResponse(null, { status: 204 });
     }),
 
     http.get(`${API_BASE}/targets/`, () => HttpResponse.json(state.targets)),

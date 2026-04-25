@@ -8,6 +8,7 @@ import { ResetPasswordPage } from "@/features/auth/ResetPasswordPage";
 import { VerifyPendingPage } from "@/features/auth/VerifyPendingPage";
 import { DayDetailPage } from "@/features/days/DayDetailPage";
 import { FoodsPage } from "@/features/foods/FoodsPage";
+import { GoalsPage } from "@/features/goals/GoalsPage";
 import { MonthPage } from "@/features/month/MonthPage";
 import { OnboardingPage } from "@/features/onboarding/OnboardingPage";
 import { SettingsPage } from "@/features/settings/SettingsPage";
@@ -32,7 +33,7 @@ export const router = createBrowserRouter([
           { path: "/recipes", element: <Placeholder title="Recipes" /> },
           { path: "/weight", element: <WeightPage /> },
           { path: "/sleep", element: <SleepPage /> },
-          { path: "/goals", element: <Placeholder title="Goals" /> },
+          { path: "/goals", element: <GoalsPage /> },
           { path: "/settings", element: <SettingsPage /> },
         ],
       },
