@@ -307,3 +307,41 @@ export function useDeleteSleep() {
     },
   });
 }
+
+export function useCreateNap() {
+  const qc = useQueryClient();
+  return useMutation({
+    mutationFn: (data: { day: string; hours: string; start_time: string }) =>
+      apiPost<NapLog>("/nap-logs/", data),
+    onSuccess: () => {
+      qc.invalidateQueries({ queryKey: DAYS_KEY });
+    },
+  });
+}
+
+export function useUpdateNap() {
+  const qc = useQueryClient();
+  return useMutation({
+    mutationFn: ({
+      id,
+      data,
+    }: {
+      id: string;
+      data: Partial<{ hours: string; start_time: string }>;
+    }) => apiPatch<NapLog>(`/nap-logs/${id}/`, data),
+    onSuccess: () => {
+      qc.invalidateQueries({ queryKey: DAYS_KEY });
+    },
+  });
+}
+
+export function useDeleteNap() {
+  const qc = useQueryClient();
+  return useMutation({
+    mutationFn: (id: string) =>
+      apiClient<void>({ url: `/nap-logs/${id}/`, method: "DELETE" }),
+    onSuccess: () => {
+      qc.invalidateQueries({ queryKey: DAYS_KEY });
+    },
+  });
+}

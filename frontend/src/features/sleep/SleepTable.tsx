@@ -1,34 +1,13 @@
-import { Badge, Box, Group, Table, Text } from "@mantine/core";
+import { Badge, Table, Text } from "@mantine/core";
 import { trimSeconds } from "@/lib/time";
-import { sleepHoursColor, sleepQualityColor } from "@/lib/sleepColors";
+import { sleepHoursColor } from "@/lib/sleepColors";
+import { QualityDots } from "@/components/QualityDots";
 import type { Day } from "@/features/days/api";
 
 interface Props {
   days: Day[];
   hoursTarget: number;
   qualityTarget: number;
-}
-
-function QualityDots({ quality, target }: { quality: number; target: number }) {
-  const color = sleepQualityColor(quality, target);
-  return (
-    <Group gap={3} wrap="nowrap">
-      {[0, 1, 2, 3, 4].map((i) => (
-        <Box
-          key={i}
-          w={8}
-          h={8}
-          style={{
-            borderRadius: "50%",
-            backgroundColor:
-              i < quality
-                ? `var(--mantine-color-${color}-6)`
-                : "var(--mantine-color-dark-4)",
-          }}
-        />
-      ))}
-    </Group>
-  );
 }
 
 export function SleepTable({ days, hoursTarget, qualityTarget }: Props) {
