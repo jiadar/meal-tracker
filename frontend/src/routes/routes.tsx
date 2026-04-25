@@ -12,6 +12,7 @@ import { MonthPage } from "@/features/month/MonthPage";
 import { OnboardingPage } from "@/features/onboarding/OnboardingPage";
 import { SettingsPage } from "@/features/settings/SettingsPage";
 import { SleepPage } from "@/features/sleep/SleepPage";
+import { WeightPage } from "@/features/weight/WeightPage";
 
 export const router = createBrowserRouter([
   { path: "/login", element: <LoginPage /> },
@@ -29,7 +30,7 @@ export const router = createBrowserRouter([
           { path: "/month", element: <MonthPage /> },
           { path: "/foods", element: <FoodsPage /> },
           { path: "/recipes", element: <Placeholder title="Recipes" /> },
-          { path: "/weight", element: <Placeholder title="Weight" /> },
+          { path: "/weight", element: <WeightPage /> },
           { path: "/sleep", element: <SleepPage /> },
           { path: "/goals", element: <Placeholder title="Goals" /> },
           { path: "/settings", element: <SettingsPage /> },
