@@ -1,89 +1,13 @@
 import { useState } from "react";
-import {
-  ActionIcon,
-  Group,
-  Paper,
-  SimpleGrid,
-  Stack,
-  Text,
-  Title,
-} from "@mantine/core";
-import { IconChevronLeft, IconChevronRight } from "@tabler/icons-react";
+import { Group, Paper, SimpleGrid, Stack, Text, Title } from "@mantine/core";
 import { useTargets } from "@/features/settings/api";
+import { MonthPicker } from "@/components/MonthPicker";
 import { StatCard } from "@/components/StatCard";
 import { sleepHoursColor, sleepQualityColor } from "@/lib/sleepColors";
+import { monthBounds, parseToday } from "@/lib/months";
 import { useDaysRange, useMonthSummary, useToday } from "@/features/days/api";
 import { SleepChart } from "./SleepChart";
 import { SleepTable } from "./SleepTable";
-
-const MONTH_NAMES = [
-  "JAN", "FEB", "MAR", "APR", "MAY", "JUN",
-  "JUL", "AUG", "SEP", "OCT", "NOV", "DEC",
-];
-
-function pad(n: number): string {
-  return String(n).padStart(2, "0");
-}
-
-function lastDayOfMonth(year: number, month: number): number {
-  return new Date(year, month, 0).getDate();
-}
-
-function monthBounds(year: number, month: number): { from: string; to: string } {
-  return {
-    from: `${year}-${pad(month)}-01`,
-    to: `${year}-${pad(month)}-${pad(lastDayOfMonth(year, month))}`,
-  };
-}
-
-function shiftMonth(year: number, month: number, delta: number): { year: number; month: number } {
-  const m = month + delta;
-  if (m < 1) return { year: year - 1, month: 12 };
-  if (m > 12) return { year: year + 1, month: 1 };
-  return { year, month: m };
-}
-
-function parseToday(iso: string | undefined): { year: number; month: number } {
-  if (!iso) {
-    const d = new Date();
-    return { year: d.getFullYear(), month: d.getMonth() + 1 };
-  }
-  return { year: Number(iso.slice(0, 4)), month: Number(iso.slice(5, 7)) };
-}
-
-interface MonthPickerProps {
-  year: number;
-  month: number;
-  onChange: (next: { year: number; month: number }) => void;
-  maxYear: number;
-  maxMonth: number;
-}
-
-function MonthPicker({ year, month, onChange, maxYear, maxMonth }: MonthPickerProps) {
-  const atMax = year === maxYear && month === maxMonth;
-  return (
-    <Group gap="xs">
-      <ActionIcon
-        variant="subtle"
-        aria-label="previous month"
-        onClick={() => onChange(shiftMonth(year, month, -1))}
-      >
-        <IconChevronLeft size={18} />
-      </ActionIcon>
-      <Text ff="monospace" tt="uppercase" fw={600} miw={90} ta="center">
-        {MONTH_NAMES[month - 1]} {year}
-      </Text>
-      <ActionIcon
-        variant="subtle"
-        aria-label="next month"
-        disabled={atMax}
-        onClick={() => onChange(shiftMonth(year, month, 1))}
-      >
-        <IconChevronRight size={18} />
-      </ActionIcon>
-    </Group>
-  );
-}
 
 export function SleepPage() {
   const today = useToday();

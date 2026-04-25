@@ -8,6 +8,7 @@ import { ResetPasswordPage } from "@/features/auth/ResetPasswordPage";
 import { VerifyPendingPage } from "@/features/auth/VerifyPendingPage";
 import { DayDetailPage } from "@/features/days/DayDetailPage";
 import { FoodsPage } from "@/features/foods/FoodsPage";
+import { MonthPage } from "@/features/month/MonthPage";
 import { OnboardingPage } from "@/features/onboarding/OnboardingPage";
 import { SettingsPage } from "@/features/settings/SettingsPage";
 import { SleepPage } from "@/features/sleep/SleepPage";
@@ -25,7 +26,7 @@ export const router = createBrowserRouter([
         element: <AppShell />,
         children: [
           { path: "/", element: <DayDetailPage /> },
-          { path: "/month", element: <Placeholder title="Month" /> },
+          { path: "/month", element: <MonthPage /> },
           { path: "/foods", element: <FoodsPage /> },
           { path: "/recipes", element: <Placeholder title="Recipes" /> },
           { path: "/weight", element: <Placeholder title="Weight" /> },
