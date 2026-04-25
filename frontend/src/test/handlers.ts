@@ -142,6 +142,41 @@ export interface TestState {
   nextRecipeId: number;
   nextIngredientId: number;
   recipes: RecipeFixture[];
+  user: UserFixture;
+}
+
+export interface UserProfileFixture {
+  display_name: string;
+  timezone: string;
+  bmr: number;
+  onboarded_at: string | null;
+  created_at: string;
+  updated_at: string;
+}
+
+export interface UserFixture {
+  id: number;
+  email: string;
+  is_email_verified: boolean;
+  date_joined: string;
+  profile: UserProfileFixture;
+}
+
+export function defaultUser(): UserFixture {
+  return {
+    id: 1,
+    email: "test@example.com",
+    is_email_verified: true,
+    date_joined: "2026-01-01T00:00:00Z",
+    profile: {
+      display_name: "",
+      timezone: "America/Los_Angeles",
+      bmr: 1970,
+      onboarded_at: "2026-01-01T00:00:00Z",
+      created_at: "2026-01-01T00:00:00Z",
+      updated_at: "2026-01-01T00:00:00Z",
+    },
+  };
 }
 
 export interface RecipeIngredientFixture {
@@ -339,6 +374,7 @@ export function createTestState(overrides: Partial<TestState> = {}): TestState {
     nextRecipeId: 1,
     nextIngredientId: 1,
     recipes: [],
+    user: defaultUser(),
     ...overrides,
   };
 }
@@ -704,6 +740,20 @@ export function buildHandlers(state: TestState) {
         weight,
         sleep,
       });
+    }),
+
+    http.get(`${API_BASE}/auth/me/`, () => HttpResponse.json(state.user)),
+
+    http.patch(`${API_BASE}/auth/me/`, async ({ request }) => {
+      const body = (await request.json()) as {
+        profile?: Partial<UserProfileFixture>;
+      };
+      if (body.profile) {
+        Object.assign(state.user.profile, body.profile, {
+          updated_at: new Date().toISOString(),
+        });
+      }
+      return HttpResponse.json(state.user);
     }),
 
     http.get(`${API_BASE}/recipes/`, () =>
