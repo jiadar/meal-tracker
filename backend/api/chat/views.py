@@ -23,9 +23,22 @@ from rest_framework import permissions
 from rest_framework.decorators import (
     api_view,
     permission_classes,
+    renderer_classes,
     throttle_classes,
 )
+from rest_framework.renderers import BaseRenderer, JSONRenderer
 from rest_framework.throttling import ScopedRateThrottle
+
+
+class SSERenderer(BaseRenderer):
+    """Allow `Accept: text/event-stream`. The view returns a StreamingHttpResponse
+    directly so this renderer is never asked to render anything."""
+
+    media_type = "text/event-stream"
+    format = "sse"
+
+    def render(self, data, accepted_media_type=None, renderer_context=None):  # noqa: ARG002
+        return data if isinstance(data, (bytes, bytearray)) else str(data).encode()
 
 from api.permissions import IsEmailVerified
 
@@ -51,6 +64,7 @@ async def _run_chat(messages: list[dict]) -> AsyncIterator[bytes]:
         TextBlock,
         ToolResultBlock,
         ToolUseBlock,
+        UserMessage,
         create_sdk_mcp_server,
         query,
     )
@@ -75,10 +89,13 @@ async def _run_chat(messages: list[dict]) -> AsyncIterator[bytes]:
     )
 
     pending_tool_inputs: dict[str, dict] = {}
+    audit_prefix = f"mcp__{MCP_SERVER_NAME}__"
 
     try:
         async for msg in query(prompt=prompt, options=options):
             if isinstance(msg, AssistantMessage):
+                # AssistantMessage may contain TextBlock, ToolUseBlock, and
+                # ThinkingBlock. ThinkingBlock is intentionally not surfaced.
                 for block in msg.content:
                     if isinstance(block, TextBlock) and block.text:
                         yield _sse_frame("text", {"delta": block.text})
@@ -88,15 +105,25 @@ async def _run_chat(messages: list[dict]) -> AsyncIterator[bytes]:
                             "name": block.name,
                             "input": block.input,
                         }
-                    elif isinstance(block, ToolResultBlock):
+            elif isinstance(msg, UserMessage):
+                # UserMessage carries ToolResultBlock entries the SDK
+                # synthesizes after each tool call.
+                for block in msg.content:
+                    if isinstance(block, ToolResultBlock):
                         meta = pending_tool_inputs.pop(block.tool_use_id, {})
+                        name = meta.get("name", "")
+                        # Surface only our app's tools as audit pills; skip
+                        # the built-in `ToolSearch`/etc. that Claude Code
+                        # uses internally to discover the MCP tools.
+                        if not name.startswith(audit_prefix):
+                            continue
                         yield _sse_frame(
                             "tool_call",
                             {
-                                "name": meta.get("name", ""),
+                                "name": name.removeprefix(audit_prefix),
                                 "input": meta.get("input", {}),
                                 "result": _stringify_result(block.content),
-                                "is_error": getattr(block, "is_error", False) or False,
+                                "is_error": bool(getattr(block, "is_error", False)),
                             },
                         )
     except Exception as e:  # pragma: no cover - surfaced to client
@@ -122,6 +149,7 @@ def _stringify_result(content) -> str:
 @api_view(["POST"])
 @permission_classes([permissions.IsAuthenticated, IsEmailVerified])
 @throttle_classes([ScopedRateThrottle])
+@renderer_classes([SSERenderer, JSONRenderer])
 def chat_view(request):
     """
     Body: {"messages": [{"role": "user"|"assistant", "content": "..."}]}
