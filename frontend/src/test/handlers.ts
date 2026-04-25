@@ -194,12 +194,13 @@ function totalsFor(meals: MealFixture[]) {
 function macrosFor(totals: Record<string, number>) {
   const cals = totals.calories;
   if (!cals) return { fat_pct: null, sat_fat_pct: null, carb_pct: null, protein_pct: null, add_sugar_pct: null };
+  // Whole-number percentages, matching backend macro_percentages().
   return {
-    fat_pct: (totals.fat * 9) / cals,
-    sat_fat_pct: (totals.sat_fat * 9) / cals,
-    carb_pct: (totals.carbs * 4) / cals,
-    protein_pct: (totals.protein * 4) / cals,
-    add_sugar_pct: (totals.add_sugar * 4) / cals,
+    fat_pct: Number((((totals.fat * 9) / cals) * 100).toFixed(1)),
+    sat_fat_pct: Number((((totals.sat_fat * 9) / cals) * 100).toFixed(1)),
+    carb_pct: Number((((totals.carbs * 4) / cals) * 100).toFixed(1)),
+    protein_pct: Number((((totals.protein * 4) / cals) * 100).toFixed(1)),
+    add_sugar_pct: Number((((totals.add_sugar * 4) / cals) * 100).toFixed(1)),
   };
 }
 
@@ -519,6 +520,48 @@ export function buildHandlers(state: TestState) {
       const month = Number(params.month);
       const prefix = `${year}-${String(month).padStart(2, "0")}-`;
       const monthDays = state.days.filter((d) => d.date.startsWith(prefix));
+      const n = monthDays.length;
+
+      // Sum nutrient totals across all meals in the month.
+      const summed: Record<string, number> = {
+        calories: 0, fat: 0, sat_fat: 0, cholesterol: 0, sodium: 0,
+        carbs: 0, fiber: 0, sugar: 0, add_sugar: 0, protein: 0,
+      };
+      for (const d of monthDays) {
+        const t = totalsFor(d.meals);
+        for (const k of Object.keys(summed)) summed[k] += t[k] ?? 0;
+      }
+      const averages = n
+        ? Object.fromEntries(
+            Object.entries(summed).map(([k, v]) => [k, Number((v / n).toFixed(2))]),
+          )
+        : {};
+      const macros = macrosFor(summed);
+
+      const totalExercise = monthDays.reduce(
+        (a, d) => a + d.exercises.reduce((b, e) => b + e.calories, 0),
+        0,
+      );
+      const consumed = summed.calories;
+      const allowed = n * 1970 + totalExercise;
+      const net = consumed - allowed;
+
+      const weightDays = monthDays.filter((d) => d.weight_lbs != null);
+      const weights = weightDays
+        .slice()
+        .sort((a, b) => a.date.localeCompare(b.date))
+        .map((d) => Number(d.weight_lbs));
+      const weight = weights.length
+        ? {
+            start: weights[0],
+            end: weights[weights.length - 1],
+            change: Number((weights[0] - weights[weights.length - 1]).toFixed(2)),
+            low: Math.min(...weights),
+            high: Math.max(...weights),
+            days_with_data: weights.length,
+          }
+        : null;
+
       const sleepDays = monthDays.filter((d) => d.sleep != null);
       const sleep = sleepDays.length
         ? {
@@ -537,21 +580,32 @@ export function buildHandlers(state: TestState) {
             ),
           }
         : null;
+
+      const creatineDays = monthDays.filter((d) => d.creatine_mg != null);
+      const creatine_avg_mg = creatineDays.length
+        ? Number(
+            (
+              creatineDays.reduce((a, d) => a + (d.creatine_mg ?? 0), 0) /
+              creatineDays.length
+            ).toFixed(2),
+          )
+        : null;
+
       return HttpResponse.json({
         year,
         month,
-        days_tracked: monthDays.length,
-        averages: {},
-        macros: {},
+        days_tracked: n,
+        averages,
+        macros,
         totals: {
-          consumed_calories: 0,
-          exercise_calories: 0,
-          allowed_calories: 0,
-          net_calories: 0,
-          is_surplus: false,
+          consumed_calories: Number(consumed.toFixed(2)),
+          exercise_calories: totalExercise,
+          allowed_calories: allowed,
+          net_calories: Number(net.toFixed(2)),
+          is_surplus: net > 0,
         },
-        creatine_avg_mg: null,
-        weight: null,
+        creatine_avg_mg,
+        weight,
         sleep,
       });
     }),

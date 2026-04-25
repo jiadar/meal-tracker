@@ -13,6 +13,7 @@ import {
 } from "@mantine/core";
 import { DatePickerInput } from "@mantine/dates";
 import { notifications } from "@mantine/notifications";
+import { useSearchParams } from "react-router";
 import { IconCheck, IconEdit, IconPlus, IconTrash, IconX } from "@tabler/icons-react";
 import { FoodPicker } from "@/components/FoodPicker";
 import { StatCard } from "@/components/StatCard";
@@ -219,7 +220,9 @@ function AddMealForm({ dayId, onAdded }: { dayId: string; onAdded: () => void })
 
 export function DayDetailPage() {
   const { data: today } = useToday();
-  const [selected, setSelected] = useState<string | null>(null);
+  const [searchParams] = useSearchParams();
+  // Initial value seeded from `?date=YYYY-MM-DD` on first render only.
+  const [selected, setSelected] = useState<string | null>(() => searchParams.get("date"));
   const date = selected ?? today?.date;
 
   const dayQ = useDayByDate(date);
@@ -362,29 +365,29 @@ export function DayDetailPage() {
                       <Table.Td />
                       <Table.Td ta="right" c="dimmed">
                         {summary.macros.fat_pct != null
-                          ? `${(summary.macros.fat_pct * 100).toFixed(1)}%`
+                          ? `${summary.macros.fat_pct.toFixed(1)}%`
                           : "—"}
                       </Table.Td>
                       <Table.Td ta="right" c="dimmed">
                         {summary.macros.sat_fat_pct != null
-                          ? `${(summary.macros.sat_fat_pct * 100).toFixed(1)}%`
+                          ? `${summary.macros.sat_fat_pct.toFixed(1)}%`
                           : "—"}
                       </Table.Td>
                       <Table.Td colSpan={2} />
                       <Table.Td ta="right" c="dimmed">
                         {summary.macros.carb_pct != null
-                          ? `${(summary.macros.carb_pct * 100).toFixed(1)}%`
+                          ? `${summary.macros.carb_pct.toFixed(1)}%`
                           : "—"}
                       </Table.Td>
                       <Table.Td colSpan={2} />
                       <Table.Td ta="right" c="dimmed">
                         {summary.macros.add_sugar_pct != null
-                          ? `${(summary.macros.add_sugar_pct * 100).toFixed(1)}%`
+                          ? `${summary.macros.add_sugar_pct.toFixed(1)}%`
                           : "—"}
                       </Table.Td>
                       <Table.Td ta="right" c="dimmed">
                         {summary.macros.protein_pct != null
-                          ? `${(summary.macros.protein_pct * 100).toFixed(1)}%`
+                          ? `${summary.macros.protein_pct.toFixed(1)}%`
                           : "—"}
                       </Table.Td>
                       <Table.Td />

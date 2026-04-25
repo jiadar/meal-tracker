@@ -4,6 +4,7 @@ import { Notifications } from "@mantine/notifications";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { render, type RenderOptions } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
+import { MemoryRouter } from "react-router";
 import { theme } from "@/lib/theme";
 
 export function makeQueryClient() {
@@ -26,7 +27,7 @@ export function renderWithProviders(ui: ReactElement, options: Options = {}) {
     return (
       <MantineProvider theme={theme} defaultColorScheme="light" env="test">
         <QueryClientProvider client={queryClient}>
-          {children}
+          <MemoryRouter>{children}</MemoryRouter>
           <Notifications />
         </QueryClientProvider>
       </MantineProvider>
