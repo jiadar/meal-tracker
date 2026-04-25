@@ -68,11 +68,70 @@ export interface DayFixture {
   nap: NapFixture | null;
 }
 
+export interface TargetsFixture {
+  id: string;
+  fat_pct_low: string;
+  fat_pct_high: string;
+  sat_fat_pct_low: string;
+  sat_fat_pct_high: string;
+  carb_pct_low: string;
+  carb_pct_high: string;
+  protein_pct_low: string;
+  protein_pct_high: string;
+  added_sugar_pct_low: string;
+  added_sugar_pct_high: string;
+  cholesterol_low: string;
+  cholesterol_high: string;
+  sodium_low: string;
+  sodium_high: string;
+  fiber_low: string;
+  fiber_high: string;
+  protein_min: string;
+  creatine_min: string;
+  sleep_hours_low: string;
+  sleep_hours_high: string;
+  sleep_quality_low: number;
+  sleep_quality_high: number;
+  created_at: string;
+  updated_at: string;
+}
+
+export function defaultTargets(): TargetsFixture {
+  return {
+    id: "targets-1",
+    fat_pct_low: "20.00",
+    fat_pct_high: "35.00",
+    sat_fat_pct_low: "0.00",
+    sat_fat_pct_high: "10.00",
+    carb_pct_low: "45.00",
+    carb_pct_high: "65.00",
+    protein_pct_low: "10.00",
+    protein_pct_high: "35.00",
+    added_sugar_pct_low: "0.00",
+    added_sugar_pct_high: "10.00",
+    cholesterol_low: "0.0",
+    cholesterol_high: "200.0",
+    sodium_low: "0.0",
+    sodium_high: "2300.0",
+    fiber_low: "28.0",
+    fiber_high: "34.0",
+    protein_min: "90.0",
+    creatine_min: "5.0",
+    sleep_hours_low: "8.00",
+    sleep_hours_high: "10.00",
+    sleep_quality_low: 4,
+    sleep_quality_high: 5,
+    created_at: "2026-01-01T00:00:00Z",
+    updated_at: "2026-01-01T00:00:00Z",
+  };
+}
+
 export interface TestState {
   today: string;
   timezone: string;
   foods: FoodFixture[];
   days: DayFixture[];
+  targets: TargetsFixture;
   nextMealId: number;
   nextDayId: number;
   nextExerciseId: number;
@@ -226,6 +285,7 @@ export function createTestState(overrides: Partial<TestState> = {}): TestState {
     timezone: "America/Los_Angeles",
     foods: [],
     days: [],
+    targets: defaultTargets(),
     nextMealId: 1,
     nextDayId: 1,
     nextExerciseId: 1,
@@ -496,31 +556,13 @@ export function buildHandlers(state: TestState) {
       });
     }),
 
-    http.get(`${API_BASE}/targets/`, () =>
-      HttpResponse.json({
-        fat_pct_low: "0.20",
-        fat_pct_high: "0.35",
-        sat_fat_pct_low: "0.00",
-        sat_fat_pct_high: "0.10",
-        carb_pct_low: "0.45",
-        carb_pct_high: "0.65",
-        protein_pct_low: "0.10",
-        protein_pct_high: "0.35",
-        cholesterol_low: 0,
-        cholesterol_high: 200,
-        sodium_low: 0,
-        sodium_high: 2300,
-        fiber_low: "28",
-        fiber_high: "34",
-        protein_min: "90",
-        add_sugar_pct_low: "0.00",
-        add_sugar_pct_high: "0.10",
-        creatine_min: 5,
-        sleep_hours_low: "8",
-        sleep_hours_high: "10",
-        sleep_quality_low: 4,
-        sleep_quality_high: 5,
-      }),
-    ),
+    http.get(`${API_BASE}/targets/`, () => HttpResponse.json(state.targets)),
+
+    http.patch(`${API_BASE}/targets/`, async ({ request }) => {
+      const body = (await request.json()) as Record<string, unknown>;
+      Object.assign(state.targets, body);
+      state.targets.updated_at = new Date().toISOString();
+      return HttpResponse.json(state.targets);
+    }),
   ];
 }
