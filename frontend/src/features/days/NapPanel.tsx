@@ -38,6 +38,7 @@ export function NapPanel({ day, onChanged }: Props) {
   );
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- intentional prop→form-state sync on day change
     setHours(initialHours(day.nap));
     setStartTime(day.nap ? trimSeconds(day.nap.start_time) : "");
   }, [day.id, day.nap]);
