@@ -17,6 +17,7 @@ export function DayFieldsPanel({ day, onSaved }: Props) {
   const [creatine, setCreatine] = useState<number | "">(day.creatine_mg ?? "");
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- intentional prop→form-state sync on day change
     setWeight(day.weight_lbs != null ? Number(day.weight_lbs) : "");
     setLocation(day.location ?? "");
     setCreatine(day.creatine_mg ?? "");

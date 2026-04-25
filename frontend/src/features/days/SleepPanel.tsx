@@ -46,6 +46,7 @@ export function SleepPanel({ day, onChanged }: Props) {
   const [meds, setMeds] = useState<boolean>(day.sleep?.meds ?? false);
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- intentional prop→form-state sync on day change
     setHours(initialHours(day.sleep));
     setQuality(day.sleep?.quality ?? 0);
     setBedtime(day.sleep ? trimSeconds(day.sleep.bedtime) : "");
