@@ -10,6 +10,16 @@ export interface ExerciseLog {
   position?: number;
 }
 
+export interface SleepLog {
+  id: string;
+  day: string;
+  hours: string;
+  quality: number;
+  bedtime: string;
+  wake: string;
+  meds: boolean;
+}
+
 export interface MealItem {
   id: string;
   day: string;
@@ -46,7 +56,7 @@ export interface Day {
   weight_lbs: string | null;
   creatine_mg: number | null;
   meals: MealItem[];
-  sleep: unknown;
+  sleep: SleepLog | null;
   nap: unknown;
   exercises: ExerciseLog[];
   summary: DaySummary;
@@ -189,6 +199,56 @@ export function useDeleteMeal(dayId: string | undefined) {
     onSuccess: () => {
       qc.invalidateQueries({ queryKey: [...DAYS_KEY, "by-date"] });
       if (dayId) qc.invalidateQueries({ queryKey: ["meals", dayId] });
+    },
+  });
+}
+
+export function useCreateSleep() {
+  const qc = useQueryClient();
+  return useMutation({
+    mutationFn: (data: {
+      day: string;
+      hours: string;
+      quality: number;
+      bedtime: string;
+      wake: string;
+      meds: boolean;
+    }) => apiPost<SleepLog>("/sleep-logs/", data),
+    onSuccess: () => {
+      qc.invalidateQueries({ queryKey: DAYS_KEY });
+    },
+  });
+}
+
+export function useUpdateSleep() {
+  const qc = useQueryClient();
+  return useMutation({
+    mutationFn: ({
+      id,
+      data,
+    }: {
+      id: string;
+      data: Partial<{
+        hours: string;
+        quality: number;
+        bedtime: string;
+        wake: string;
+        meds: boolean;
+      }>;
+    }) => apiPatch<SleepLog>(`/sleep-logs/${id}/`, data),
+    onSuccess: () => {
+      qc.invalidateQueries({ queryKey: DAYS_KEY });
+    },
+  });
+}
+
+export function useDeleteSleep() {
+  const qc = useQueryClient();
+  return useMutation({
+    mutationFn: (id: string) =>
+      apiClient<void>({ url: `/sleep-logs/${id}/`, method: "DELETE" }),
+    onSuccess: () => {
+      qc.invalidateQueries({ queryKey: DAYS_KEY });
     },
   });
 }
