@@ -136,6 +136,7 @@ export interface TestState {
   nextDayId: number;
   nextExerciseId: number;
   nextSleepId: number;
+  nextNapId: number;
 }
 
 const DEFAULT_FOOD: Omit<FoodFixture, "id" | "name" | "calories"> = {
@@ -291,6 +292,7 @@ export function createTestState(overrides: Partial<TestState> = {}): TestState {
     nextDayId: 1,
     nextExerciseId: 1,
     nextSleepId: 1,
+    nextNapId: 1,
     ...overrides,
   };
 }
@@ -509,6 +511,54 @@ export function buildHandlers(state: TestState) {
       for (const day of state.days) {
         if (day.sleep?.id === params.id) {
           day.sleep = null;
+          return new HttpResponse(null, { status: 204 });
+        }
+      }
+      return HttpResponse.json({ detail: "not found" }, { status: 404 });
+    }),
+
+    http.post(`${API_BASE}/nap-logs/`, async ({ request }) => {
+      const body = (await request.json()) as {
+        day: string;
+        hours: string;
+        start_time: string;
+      };
+      const day = state.days.find((d) => d.id === body.day);
+      if (!day) return HttpResponse.json({ detail: "not found" }, { status: 404 });
+      if (day.nap) {
+        return HttpResponse.json(
+          { detail: "Day already has a nap log." },
+          { status: 400 },
+        );
+      }
+      const log: NapFixture = {
+        id: `nap-${state.nextNapId++}`,
+        day: day.id,
+        hours: body.hours,
+        start_time: body.start_time,
+      };
+      day.nap = log;
+      return HttpResponse.json(log, { status: 201 });
+    }),
+
+    http.patch(`${API_BASE}/nap-logs/:id/`, async ({ request, params }) => {
+      const body = (await request.json()) as Partial<{
+        hours: string;
+        start_time: string;
+      }>;
+      for (const day of state.days) {
+        if (day.nap?.id !== params.id) continue;
+        if (body.hours !== undefined) day.nap.hours = body.hours;
+        if (body.start_time !== undefined) day.nap.start_time = body.start_time;
+        return HttpResponse.json(day.nap);
+      }
+      return HttpResponse.json({ detail: "not found" }, { status: 404 });
+    }),
+
+    http.delete(`${API_BASE}/nap-logs/:id/`, ({ params }) => {
+      for (const day of state.days) {
+        if (day.nap?.id === params.id) {
+          day.nap = null;
           return new HttpResponse(null, { status: 204 });
         }
       }

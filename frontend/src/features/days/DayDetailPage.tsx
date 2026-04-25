@@ -30,6 +30,8 @@ import {
 } from "./api";
 import { DayFieldsPanel } from "./DayFieldsPanel";
 import { ExercisePanel } from "./ExercisePanel";
+import { NapPanel } from "./NapPanel";
+import { SleepBar } from "./SleepBar";
 import { SleepPanel } from "./SleepPanel";
 
 function fmt(n: number | undefined | null, digits = 1): string {
@@ -275,9 +277,11 @@ export function DayDetailPage() {
       {day && summary && (
         <>
           <SummaryCards day={day} summary={summary} />
+          <SleepBar day={day} />
           <DayFieldsPanel day={day} onSaved={() => dayQ.refetch()} />
           <ExercisePanel day={day} onChanged={() => dayQ.refetch()} />
           <SleepPanel day={day} onChanged={() => dayQ.refetch()} />
+          <NapPanel day={day} onChanged={() => dayQ.refetch()} />
           <AddMealForm dayId={day.id} onAdded={() => dayQ.refetch()} />
           <Paper withBorder radius="md" style={{ overflowX: "auto" }}>
             <Table ff="monospace" fz="sm" withRowBorders={false}>

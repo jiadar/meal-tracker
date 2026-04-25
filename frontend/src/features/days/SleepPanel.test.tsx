@@ -29,7 +29,7 @@ describe("Sleep panel", () => {
     server.use(...buildHandlers(state));
     renderWithProviders(<DayDetailPage />);
 
-    await screen.findByLabelText(/hours/i);
+    await screen.findAllByLabelText(/hours/i);
 
     const panel = sleepPanel();
     expect(within(panel).getByRole("button", { name: /^save$/i })).toBeDisabled();
@@ -44,7 +44,7 @@ describe("Sleep panel", () => {
     server.use(...buildHandlers(state));
     const { user } = renderWithProviders(<DayDetailPage />);
 
-    await screen.findByLabelText(/hours/i);
+    await screen.findAllByLabelText(/hours/i);
     const panel = sleepPanel();
 
     const hoursInput = within(panel).getByLabelText(/hours/i);
@@ -104,7 +104,7 @@ describe("Sleep panel", () => {
     server.use(...buildHandlers(state));
     const { user } = renderWithProviders(<DayDetailPage />);
 
-    await screen.findByLabelText(/hours/i);
+    await screen.findAllByLabelText(/hours/i);
     const panel = sleepPanel();
 
     // Save starts disabled because state matches seed.
