@@ -2,6 +2,7 @@ import { useState } from "react";
 import {
   Badge,
   Group,
+  NumberInput,
   Paper,
   Stack,
   Table,
@@ -9,6 +10,7 @@ import {
   Title,
 } from "@mantine/core";
 import { useDebouncedSave, type SaveStatus } from "@/lib/useDebouncedSave";
+import { useMe, useUpdateProfile } from "@/features/auth/api";
 import { useTargets, useUpdateTargets } from "./api";
 import { TargetRow } from "./TargetRow";
 import {
@@ -19,6 +21,18 @@ import {
   type TargetField,
   type TargetValues,
 } from "./schema";
+
+interface BmrValues {
+  bmr: number | null;
+}
+
+function combinedStatus(a: SaveStatus, b: SaveStatus): SaveStatus {
+  // Worst-of: failed > saving > unsaved > saved > idle.
+  const ranked: Record<SaveStatus, number> = {
+    failed: 4, saving: 3, unsaved: 2, saved: 1, idle: 0,
+  };
+  return ranked[a] >= ranked[b] ? a : b;
+}
 
 const PILL: Record<SaveStatus, { label: string; color: string }> = {
   idle: { label: "Saved", color: "gray" },
@@ -46,12 +60,14 @@ function SaveStatusPill({ status, onRetry }: { status: SaveStatus; onRetry: () =
 export function SettingsPage() {
   const targetsQ = useTargets();
   const update = useUpdateTargets();
+  const meQ = useMe();
+  const updateProfile = useUpdateProfile();
 
   const [values, setValues] = useState<TargetValues>({});
   const [serverValues, setServerValues] = useState<TargetValues | undefined>(undefined);
 
-  // Seed form state from the first successful targets fetch (render-time
-  // state sync; avoids set-state-in-effect on a one-shot init).
+  // Seed targets form state from the first successful targets fetch
+  // (render-time state sync; avoids set-state-in-effect on one-shot init).
   const [seeded, setSeeded] = useState(false);
   if (!seeded && targetsQ.data) {
     const v = formFromServer(targetsQ.data);
@@ -60,7 +76,17 @@ export function SettingsPage() {
     setSeeded(true);
   }
 
-  const { status, flush } = useDebouncedSave<TargetValues>({
+  // Profile (BMR) form state.
+  const [bmrValue, setBmrValue] = useState<number | "">("");
+  const [serverBmr, setServerBmr] = useState<number | undefined>(undefined);
+  const [bmrSeeded, setBmrSeeded] = useState(false);
+  if (!bmrSeeded && meQ.data) {
+    setBmrValue(meQ.data.profile.bmr);
+    setServerBmr(meQ.data.profile.bmr);
+    setBmrSeeded(true);
+  }
+
+  const targetsSave = useDebouncedSave<TargetValues>({
     values,
     serverValues,
     delayMs: 1500,
@@ -71,6 +97,25 @@ export function SettingsPage() {
     },
   });
 
+  const bmrSave = useDebouncedSave<BmrValues>({
+    values: { bmr: typeof bmrValue === "number" ? bmrValue : null },
+    serverValues: serverBmr != null ? { bmr: serverBmr } : undefined,
+    delayMs: 1500,
+    diff: (cur, server) =>
+      cur.bmr != null && cur.bmr !== server.bmr ? { bmr: cur.bmr } : {},
+    save: async (changed) => {
+      if (changed.bmr == null) return;
+      await updateProfile.mutateAsync({ bmr: changed.bmr });
+      setServerBmr(changed.bmr);
+    },
+  });
+
+  const status = combinedStatus(targetsSave.status, bmrSave.status);
+  const flush = () => {
+    void targetsSave.flush();
+    void bmrSave.flush();
+  };
+
   const onFieldChange = (field: TargetField, value: number | "") =>
     setValues((prev) => ({ ...prev, [field]: value }));
 
@@ -78,8 +123,25 @@ export function SettingsPage() {
     <Stack>
       <Group justify="space-between">
         <Title order={2}>Settings</Title>
-        <SaveStatusPill status={status} onRetry={() => void flush()} />
+        <SaveStatusPill status={status} onRetry={flush} />
       </Group>
+      <Paper withBorder p="md" radius="md">
+        <Stack gap="sm">
+          <Title order={5} ff="monospace" tt="uppercase">
+            Profile
+          </Title>
+          <Group grow align="flex-end" wrap="wrap">
+            <NumberInput
+              label="BMR (calories/day)"
+              value={bmrValue}
+              onChange={(v) => setBmrValue(typeof v === "number" ? v : "")}
+              min={0}
+              step={10}
+              description="Basal metabolic rate. Drives the daily calorie budget on Day Detail and Month tab averages."
+            />
+          </Group>
+        </Stack>
+      </Paper>
       <Paper withBorder radius="md" style={{ overflowX: "auto" }}>
         <Table>
           <Table.Thead>

@@ -44,6 +44,29 @@ describe("SettingsPage", () => {
     expect((screen.getByLabelText("Sleep hours low") as HTMLInputElement).value).toBe(
       "8",
     );
+
+    // Profile / BMR section.
+    expect(
+      (screen.getByLabelText(/BMR \(calories\/day\)/i) as HTMLInputElement).value,
+    ).toBe("1970");
+  });
+
+  it("auto-saves BMR after the debounce window", async () => {
+    const state = createTestState();
+    server.use(...buildHandlers(state));
+
+    const { user } = renderWithProviders(<SettingsPage />);
+
+    const bmr = await screen.findByLabelText(/BMR \(calories\/day\)/i);
+    await user.tripleClick(bmr);
+    await user.keyboard("2100");
+
+    await waitFor(
+      () => {
+        expect(state.user.profile.bmr).toBe(2100);
+      },
+      { timeout: 3500 },
+    );
   });
 
   it("debounces saves: a single edit lands as one PATCH after the debounce window", async () => {
