@@ -20,6 +20,10 @@ services:
     command: python manage.py runserver 0.0.0.0:8000
     volumes:
       - .:/app
+      # Claude Agent SDK auth — mount host's Claude Code credentials so the
+      # web container can use the user's Max subscription. Run `claude` once
+      # on the host to log in before starting the container.
+      - ${HOME}/.claude:/root/.claude
     ports:
       - "8000:8000"
     environment:
@@ -32,6 +36,16 @@ services:
       POSTGRES_HOST: db
       POSTGRES_PORT: 5432
       CORS_ALLOWED_ORIGINS: ${CORS_ALLOWED_ORIGINS:-http://localhost:3000,http://localhost:5173}
+      # Explicitly empty so the Agent SDK uses the OAuth credentials below
+      # instead of falling back to per-token API billing.
+      ANTHROPIC_API_KEY: ""
+      # Max subscription OAuth token. On macOS, Claude Code stores this in
+      # Keychain — we can't mount Keychain into a Linux container, so the
+      # token lives in backend/.env (gitignored) and is passed through here.
+      # Extract on host with:
+      #   security find-generic-password -s "Claude Code-credentials" -w \
+      #     | jq -r .claudeAiOauth.accessToken
+      CLAUDE_CODE_OAUTH_TOKEN: ${CLAUDE_CODE_OAUTH_TOKEN:-}
     depends_on:
       db:
         condition: service_healthy

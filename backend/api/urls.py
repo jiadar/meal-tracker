@@ -8,6 +8,7 @@ from rest_framework.routers import DefaultRouter
 from rest_framework_simplejwt.views import TokenRefreshView
 
 from . import views
+from .chat import views as chat_views
 
 router = DefaultRouter()
 router.register("foods", views.FoodViewSet, basename="food")
@@ -56,5 +57,6 @@ urlpatterns = [
         name="verify-email-resend",
     ),
     path("targets/", views.UserTargetsView.as_view(), name="targets"),
+    path("chat/", chat_views.chat_view, name="chat"),
     path("", include(router.urls)),
 ]
