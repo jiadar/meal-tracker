@@ -9,7 +9,7 @@ import {
   Title,
 } from "@mantine/core";
 import { IconChevronLeft, IconChevronRight } from "@tabler/icons-react";
-import { useTargetsRetrieve } from "@/api/generated/endpoints/targets/targets";
+import { useTargets } from "@/features/settings/api";
 import { StatCard } from "@/components/StatCard";
 import { sleepHoursColor, sleepQualityColor } from "@/lib/sleepColors";
 import { useDaysRange, useMonthSummary, useToday } from "@/features/days/api";
@@ -93,7 +93,7 @@ export function SleepPage() {
 
   const summary = useMonthSummary(year, month);
   const days = useDaysRange(bounds.from, bounds.to);
-  const targets = useTargetsRetrieve();
+  const targets = useTargets();
 
   const hoursTarget = Number(targets.data?.sleep_hours_low ?? 8);
   const qualityTarget = targets.data?.sleep_quality_low ?? 4;
