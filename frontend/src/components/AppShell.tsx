@@ -1,9 +1,11 @@
-import { AppShell as MAppShell, Burger, Group, NavLink, Text } from "@mantine/core";
+import { AppShell as MAppShell, Burger, Button, Group, NavLink, Text } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
+import { notifications } from "@mantine/notifications";
 import {
   IconCalendar,
   IconCalendarStats,
   IconChartBar,
+  IconDownload,
   IconLogout,
   IconMoon,
   IconSalad,
@@ -13,6 +15,7 @@ import {
 } from "@tabler/icons-react";
 import { NavLink as RouterNavLink, Outlet, useLocation } from "react-router";
 import { useLogout, useMe } from "@/features/auth/api";
+import { useExport } from "@/features/export/useExport";
 
 const NAV = [
   { to: "/", label: "Day Detail", icon: IconCalendar },
@@ -30,6 +33,15 @@ export function AppShell() {
   const { data: user } = useMe();
   const logout = useLogout();
   const location = useLocation();
+  const { exporting, fire: exportJson } = useExport();
+
+  const onExport = async () => {
+    try {
+      await exportJson();
+    } catch {
+      notifications.show({ color: "red", message: "Could not export data." });
+    }
+  };
 
   return (
     <MAppShell
@@ -46,6 +58,15 @@ export function AppShell() {
             </Text>
           </Group>
           <Group gap="xs">
+            <Button
+              size="xs"
+              variant="light"
+              leftSection={<IconDownload size={14} />}
+              onClick={onExport}
+              loading={exporting}
+            >
+              Export JSON
+            </Button>
             <Text size="sm" c="dimmed" visibleFrom="sm">
               {user?.profile?.display_name || user?.email}
             </Text>

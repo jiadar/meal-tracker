@@ -29,7 +29,7 @@ interface Paginated<T> {
 
 export const FOODS_KEY = ["foods"] as const;
 
-async function fetchAllFoods(search?: string): Promise<Food[]> {
+export async function fetchAllFoods(search?: string): Promise<Food[]> {
   const all: Food[] = [];
   let page = 1;
   for (;;) {
