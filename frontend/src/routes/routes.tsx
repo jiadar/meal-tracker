@@ -6,6 +6,7 @@ import { RegisterPage } from "@/features/auth/RegisterPage";
 import { ResetPasswordPage } from "@/features/auth/ResetPasswordPage";
 import { VerifyPendingPage } from "@/features/auth/VerifyPendingPage";
 import { DayDetailPage } from "@/features/days/DayDetailPage";
+import { ChatPage } from "@/features/chat/ChatPage";
 import { FoodsPage } from "@/features/foods/FoodsPage";
 import { GoalsPage } from "@/features/goals/GoalsPage";
 import { MonthPage } from "@/features/month/MonthPage";
@@ -28,6 +29,7 @@ export const router = createBrowserRouter([
         element: <AppShell />,
         children: [
           { path: "/", element: <DayDetailPage /> },
+          { path: "/chat", element: <ChatPage /> },
           { path: "/month", element: <MonthPage /> },
           { path: "/foods", element: <FoodsPage /> },
           { path: "/recipes", element: <RecipesPage /> },

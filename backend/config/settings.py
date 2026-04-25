@@ -129,6 +129,7 @@ REST_FRAMEWORK = {
         "login": "10/min",
         "password_reset": "5/hour",
         "email_verify_resend": "5/hour",
+        "chat": "60/hour",
     },
     "DEFAULT_PAGINATION_CLASS": "rest_framework.pagination.PageNumberPagination",
     "PAGE_SIZE": 50,
