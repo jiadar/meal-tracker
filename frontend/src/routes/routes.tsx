@@ -1,6 +1,5 @@
 import { Navigate, createBrowserRouter } from "react-router";
 import { AppShell } from "@/components/AppShell";
-import { Placeholder } from "@/components/Placeholder";
 import { ProtectedRoute } from "@/components/ProtectedRoute";
 import { LoginPage } from "@/features/auth/LoginPage";
 import { RegisterPage } from "@/features/auth/RegisterPage";
@@ -11,6 +10,7 @@ import { FoodsPage } from "@/features/foods/FoodsPage";
 import { GoalsPage } from "@/features/goals/GoalsPage";
 import { MonthPage } from "@/features/month/MonthPage";
 import { OnboardingPage } from "@/features/onboarding/OnboardingPage";
+import { RecipesPage } from "@/features/recipes/RecipesPage";
 import { SettingsPage } from "@/features/settings/SettingsPage";
 import { SleepPage } from "@/features/sleep/SleepPage";
 import { WeightPage } from "@/features/weight/WeightPage";
@@ -30,7 +30,7 @@ export const router = createBrowserRouter([
           { path: "/", element: <DayDetailPage /> },
           { path: "/month", element: <MonthPage /> },
           { path: "/foods", element: <FoodsPage /> },
-          { path: "/recipes", element: <Placeholder title="Recipes" /> },
+          { path: "/recipes", element: <RecipesPage /> },
           { path: "/weight", element: <WeightPage /> },
           { path: "/sleep", element: <SleepPage /> },
           { path: "/goals", element: <GoalsPage /> },

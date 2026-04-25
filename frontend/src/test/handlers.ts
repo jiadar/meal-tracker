@@ -139,6 +139,34 @@ export interface TestState {
   nextNapId: number;
   nextGoalId: number;
   weightGoals: WeightGoalFixture[];
+  nextRecipeId: number;
+  nextIngredientId: number;
+  recipes: RecipeFixture[];
+}
+
+export interface RecipeIngredientFixture {
+  id: string;
+  recipe: string;
+  food: string;
+  food_name: string;
+  grams: string;
+  note: string;
+  position: number;
+}
+
+export interface RecipeFixture {
+  id: string;
+  food: string;
+  servings: number | null;
+  total_grams_produced: string | null;
+  prep_time_minutes: number | null;
+  cook_time_minutes: number | null;
+  instructions: string;
+  notes: string;
+  source_url: string;
+  ingredients: RecipeIngredientFixture[];
+  created_at: string;
+  updated_at: string;
 }
 
 export interface WeightGoalFixture {
@@ -308,6 +336,9 @@ export function createTestState(overrides: Partial<TestState> = {}): TestState {
     nextNapId: 1,
     nextGoalId: 1,
     weightGoals: [],
+    nextRecipeId: 1,
+    nextIngredientId: 1,
+    recipes: [],
     ...overrides,
   };
 }
@@ -673,6 +704,88 @@ export function buildHandlers(state: TestState) {
         weight,
         sleep,
       });
+    }),
+
+    http.get(`${API_BASE}/recipes/`, () =>
+      HttpResponse.json(paginated(state.recipes)),
+    ),
+
+    http.post(`${API_BASE}/recipes/`, async ({ request }) => {
+      const body = (await request.json()) as Partial<RecipeFixture>;
+      if (state.recipes.some((r) => r.food === body.food)) {
+        return HttpResponse.json(
+          { detail: "Food already has a recipe." },
+          { status: 400 },
+        );
+      }
+      const now = new Date().toISOString();
+      const recipe: RecipeFixture = {
+        id: `recipe-${state.nextRecipeId++}`,
+        food: body.food ?? "",
+        servings: body.servings ?? null,
+        total_grams_produced: body.total_grams_produced ?? null,
+        prep_time_minutes: null,
+        cook_time_minutes: null,
+        instructions: "",
+        notes: body.notes ?? "",
+        source_url: body.source_url ?? "",
+        ingredients: [],
+        created_at: now,
+        updated_at: now,
+      };
+      state.recipes.push(recipe);
+      return HttpResponse.json(recipe, { status: 201 });
+    }),
+
+    http.delete(`${API_BASE}/recipes/:id/`, ({ params }) => {
+      const idx = state.recipes.findIndex((r) => r.id === params.id);
+      if (idx < 0) return HttpResponse.json({ detail: "not found" }, { status: 404 });
+      state.recipes.splice(idx, 1);
+      return new HttpResponse(null, { status: 204 });
+    }),
+
+    http.post(`${API_BASE}/recipes/:id/recompute/`, ({ params }) => {
+      const recipe = state.recipes.find((r) => r.id === params.id);
+      if (!recipe) return HttpResponse.json({ detail: "not found" }, { status: 404 });
+      // Match the backend: returns the linked food. We don't actually have a
+      // food fixture lookup here, so return a minimal stub.
+      return HttpResponse.json({ id: recipe.food });
+    }),
+
+    http.post(`${API_BASE}/recipe-ingredients/`, async ({ request }) => {
+      const body = (await request.json()) as {
+        recipe: string;
+        food: string;
+        grams: string;
+        note?: string;
+        position?: number;
+      };
+      const recipe = state.recipes.find((r) => r.id === body.recipe);
+      if (!recipe)
+        return HttpResponse.json({ detail: "not found" }, { status: 404 });
+      const food = state.foods.find((f) => f.id === body.food);
+      const ingredient: RecipeIngredientFixture = {
+        id: `ing-${state.nextIngredientId++}`,
+        recipe: recipe.id,
+        food: body.food,
+        food_name: food?.name ?? "(unknown)",
+        grams: body.grams,
+        note: body.note ?? "",
+        position: body.position ?? recipe.ingredients.length,
+      };
+      recipe.ingredients.push(ingredient);
+      return HttpResponse.json(ingredient, { status: 201 });
+    }),
+
+    http.delete(`${API_BASE}/recipe-ingredients/:id/`, ({ params }) => {
+      for (const recipe of state.recipes) {
+        const idx = recipe.ingredients.findIndex((i) => i.id === params.id);
+        if (idx >= 0) {
+          recipe.ingredients.splice(idx, 1);
+          return new HttpResponse(null, { status: 204 });
+        }
+      }
+      return HttpResponse.json({ detail: "not found" }, { status: 404 });
     }),
 
     http.get(`${API_BASE}/weight-goals/`, () =>
