@@ -9,6 +9,7 @@ import { VerifyPendingPage } from "@/features/auth/VerifyPendingPage";
 import { DayDetailPage } from "@/features/days/DayDetailPage";
 import { FoodsPage } from "@/features/foods/FoodsPage";
 import { OnboardingPage } from "@/features/onboarding/OnboardingPage";
+import { SleepPage } from "@/features/sleep/SleepPage";
 
 export const router = createBrowserRouter([
   { path: "/login", element: <LoginPage /> },
@@ -27,7 +28,7 @@ export const router = createBrowserRouter([
           { path: "/foods", element: <FoodsPage /> },
           { path: "/recipes", element: <Placeholder title="Recipes" /> },
           { path: "/weight", element: <Placeholder title="Weight" /> },
-          { path: "/sleep", element: <Placeholder title="Sleep" /> },
+          { path: "/sleep", element: <SleepPage /> },
           { path: "/goals", element: <Placeholder title="Goals" /> },
           { path: "/settings", element: <Placeholder title="Settings" /> },
         ],

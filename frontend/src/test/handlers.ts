@@ -49,6 +49,13 @@ export interface SleepFixture {
   meds: boolean;
 }
 
+export interface NapFixture {
+  id: string;
+  day: string;
+  hours: string;
+  start_time: string;
+}
+
 export interface DayFixture {
   id: string;
   date: string;
@@ -58,6 +65,7 @@ export interface DayFixture {
   meals: MealFixture[];
   exercises: ExerciseFixture[];
   sleep: SleepFixture | null;
+  nap: NapFixture | null;
 }
 
 export interface TestState {
@@ -165,7 +173,7 @@ function serializeDay(day: DayFixture) {
     creatine_mg: day.creatine_mg,
     meals: day.meals,
     sleep: day.sleep,
-    nap: null,
+    nap: day.nap,
     exercises: day.exercises,
     summary: daySummary(day),
     created_at: "2026-01-01T00:00:00Z",
@@ -192,6 +200,7 @@ export function seedDay(
     meals: [],
     exercises: [],
     sleep: null,
+    nap: null,
   };
   for (const { foodId, grams } of meals) {
     const food = state.foods.find((f) => f.id === foodId);
@@ -261,6 +270,8 @@ export function buildHandlers(state: TestState) {
         creatine_mg: null,
         meals: [],
         exercises: [],
+        sleep: null,
+        nap: null,
       };
       state.days.push(day);
       return HttpResponse.json(serializeDay(day), { status: 201 });
@@ -442,5 +453,74 @@ export function buildHandlers(state: TestState) {
       }
       return HttpResponse.json({ detail: "not found" }, { status: 404 });
     }),
+
+    http.get(`${API_BASE}/months/:year-:month/summary/`, ({ params }) => {
+      const year = Number(params.year);
+      const month = Number(params.month);
+      const prefix = `${year}-${String(month).padStart(2, "0")}-`;
+      const monthDays = state.days.filter((d) => d.date.startsWith(prefix));
+      const sleepDays = monthDays.filter((d) => d.sleep != null);
+      const sleep = sleepDays.length
+        ? {
+            days_with_data: sleepDays.length,
+            avg_hours: Number(
+              (
+                sleepDays.reduce((a, d) => a + Number(d.sleep!.hours), 0) /
+                sleepDays.length
+              ).toFixed(2),
+            ),
+            avg_quality: Number(
+              (
+                sleepDays.reduce((a, d) => a + d.sleep!.quality, 0) /
+                sleepDays.length
+              ).toFixed(2),
+            ),
+          }
+        : null;
+      return HttpResponse.json({
+        year,
+        month,
+        days_tracked: monthDays.length,
+        averages: {},
+        macros: {},
+        totals: {
+          consumed_calories: 0,
+          exercise_calories: 0,
+          allowed_calories: 0,
+          net_calories: 0,
+          is_surplus: false,
+        },
+        creatine_avg_mg: null,
+        weight: null,
+        sleep,
+      });
+    }),
+
+    http.get(`${API_BASE}/targets/`, () =>
+      HttpResponse.json({
+        fat_pct_low: "0.20",
+        fat_pct_high: "0.35",
+        sat_fat_pct_low: "0.00",
+        sat_fat_pct_high: "0.10",
+        carb_pct_low: "0.45",
+        carb_pct_high: "0.65",
+        protein_pct_low: "0.10",
+        protein_pct_high: "0.35",
+        cholesterol_low: 0,
+        cholesterol_high: 200,
+        sodium_low: 0,
+        sodium_high: 2300,
+        fiber_low: "28",
+        fiber_high: "34",
+        protein_min: "90",
+        add_sugar_pct_low: "0.00",
+        add_sugar_pct_high: "0.10",
+        creatine_min: 5,
+        sleep_hours_low: "8",
+        sleep_hours_high: "10",
+        sleep_quality_low: 4,
+        sleep_quality_high: 5,
+      }),
+    ),
   ];
 }

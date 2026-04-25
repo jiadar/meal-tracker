@@ -20,6 +20,13 @@ export interface SleepLog {
   meds: boolean;
 }
 
+export interface NapLog {
+  id: string;
+  day: string;
+  hours: string;
+  start_time: string;
+}
+
 export interface MealItem {
   id: string;
   day: string;
@@ -57,7 +64,7 @@ export interface Day {
   creatine_mg: number | null;
   meals: MealItem[];
   sleep: SleepLog | null;
-  nap: unknown;
+  nap: NapLog | null;
   exercises: ExerciseLog[];
   summary: DaySummary;
   created_at: string;
@@ -94,6 +101,54 @@ export function useDayByDate(date: string | undefined) {
       return resp.results[0] ?? null;
     },
     enabled: Boolean(date),
+  });
+}
+
+export function useDaysRange(from: string | undefined, to: string | undefined) {
+  return useQuery({
+    queryKey: [...DAYS_KEY, "range", from, to],
+    queryFn: async () => {
+      const resp = await apiGet<Paginated<Day>>("/days/", { from, to });
+      return resp.results;
+    },
+    enabled: Boolean(from && to),
+  });
+}
+
+export interface MonthSummary {
+  year: number;
+  month: number;
+  days_tracked: number;
+  averages: Record<string, number>;
+  macros: Record<string, number | null>;
+  totals: {
+    consumed_calories: number;
+    exercise_calories: number;
+    allowed_calories: number;
+    net_calories: number;
+    is_surplus: boolean;
+  };
+  creatine_avg_mg: number | null;
+  weight: {
+    start: number;
+    end: number;
+    change: number;
+    low: number;
+    high: number;
+    days_with_data: number;
+  } | null;
+  sleep: {
+    days_with_data: number;
+    avg_hours: number;
+    avg_quality: number;
+  } | null;
+}
+
+export function useMonthSummary(year: number | undefined, month: number | undefined) {
+  return useQuery({
+    queryKey: ["month-summary", year, month],
+    queryFn: () => apiGet<MonthSummary>(`/months/${year}-${month}/summary/`),
+    enabled: Boolean(year && month),
   });
 }
 

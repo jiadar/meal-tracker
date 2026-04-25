@@ -12,6 +12,7 @@ import {
 } from "@mantine/core";
 import { TimeInput } from "@mantine/dates";
 import { notifications } from "@mantine/notifications";
+import { trimSeconds } from "@/lib/time";
 import {
   useCreateSleep,
   useDeleteSleep,
@@ -23,10 +24,6 @@ import {
 interface Props {
   day: Day;
   onChanged?: () => void;
-}
-
-function trimSeconds(t: string): string {
-  return t.length > 5 ? t.slice(0, 5) : t;
 }
 
 function initialHours(sleep: SleepLog | null): number | "" {

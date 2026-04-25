@@ -15,6 +15,7 @@ import { DatePickerInput } from "@mantine/dates";
 import { notifications } from "@mantine/notifications";
 import { IconCheck, IconEdit, IconPlus, IconTrash, IconX } from "@tabler/icons-react";
 import { FoodPicker } from "@/components/FoodPicker";
+import { StatCard } from "@/components/StatCard";
 import {
   useCreateDay,
   useCreateMeal,
@@ -33,19 +34,6 @@ import { SleepPanel } from "./SleepPanel";
 function fmt(n: number | undefined | null, digits = 1): string {
   if (n == null || !isFinite(n)) return "—";
   return n.toFixed(digits);
-}
-
-function StatCard({ label, value, color }: { label: string; value: string; color?: string }) {
-  return (
-    <Paper withBorder p="md" radius="md">
-      <Text size="xs" c="dimmed" ff="monospace" tt="uppercase" lts={1}>
-        {label}
-      </Text>
-      <Text size="xl" fw={700} ff="monospace" c={color}>
-        {value}
-      </Text>
-    </Paper>
-  );
 }
 
 function SummaryCards({ day, summary }: { day: Day; summary: DaySummary }) {
