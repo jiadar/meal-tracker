@@ -39,6 +39,16 @@ export interface ExerciseFixture {
   position: number;
 }
 
+export interface SleepFixture {
+  id: string;
+  day: string;
+  hours: string;
+  quality: number;
+  bedtime: string;
+  wake: string;
+  meds: boolean;
+}
+
 export interface DayFixture {
   id: string;
   date: string;
@@ -47,6 +57,7 @@ export interface DayFixture {
   creatine_mg: number | null;
   meals: MealFixture[];
   exercises: ExerciseFixture[];
+  sleep: SleepFixture | null;
 }
 
 export interface TestState {
@@ -57,6 +68,7 @@ export interface TestState {
   nextMealId: number;
   nextDayId: number;
   nextExerciseId: number;
+  nextSleepId: number;
 }
 
 const DEFAULT_FOOD: Omit<FoodFixture, "id" | "name" | "calories"> = {
@@ -152,7 +164,7 @@ function serializeDay(day: DayFixture) {
     weight_lbs: day.weight_lbs,
     creatine_mg: day.creatine_mg,
     meals: day.meals,
-    sleep: null,
+    sleep: day.sleep,
     nap: null,
     exercises: day.exercises,
     summary: daySummary(day),
@@ -179,6 +191,7 @@ export function seedDay(
     creatine_mg: overrides.creatine_mg ?? null,
     meals: [],
     exercises: [],
+    sleep: null,
   };
   for (const { foodId, grams } of meals) {
     const food = state.foods.find((f) => f.id === foodId);
@@ -207,6 +220,7 @@ export function createTestState(overrides: Partial<TestState> = {}): TestState {
     nextMealId: 1,
     nextDayId: 1,
     nextExerciseId: 1,
+    nextSleepId: 1,
     ...overrides,
   };
 }
@@ -363,6 +377,66 @@ export function buildHandlers(state: TestState) {
         const idx = day.exercises.findIndex((e) => e.id === params.id);
         if (idx >= 0) {
           day.exercises.splice(idx, 1);
+          return new HttpResponse(null, { status: 204 });
+        }
+      }
+      return HttpResponse.json({ detail: "not found" }, { status: 404 });
+    }),
+
+    http.post(`${API_BASE}/sleep-logs/`, async ({ request }) => {
+      const body = (await request.json()) as {
+        day: string;
+        hours: string;
+        quality: number;
+        bedtime: string;
+        wake: string;
+        meds?: boolean;
+      };
+      const day = state.days.find((d) => d.id === body.day);
+      if (!day) return HttpResponse.json({ detail: "not found" }, { status: 404 });
+      if (day.sleep) {
+        return HttpResponse.json(
+          { detail: "Day already has a sleep log." },
+          { status: 400 },
+        );
+      }
+      const log: SleepFixture = {
+        id: `sleep-${state.nextSleepId++}`,
+        day: day.id,
+        hours: body.hours,
+        quality: body.quality,
+        bedtime: body.bedtime,
+        wake: body.wake,
+        meds: body.meds ?? false,
+      };
+      day.sleep = log;
+      return HttpResponse.json(log, { status: 201 });
+    }),
+
+    http.patch(`${API_BASE}/sleep-logs/:id/`, async ({ request, params }) => {
+      const body = (await request.json()) as Partial<{
+        hours: string;
+        quality: number;
+        bedtime: string;
+        wake: string;
+        meds: boolean;
+      }>;
+      for (const day of state.days) {
+        if (day.sleep?.id !== params.id) continue;
+        if (body.hours !== undefined) day.sleep.hours = body.hours;
+        if (body.quality !== undefined) day.sleep.quality = body.quality;
+        if (body.bedtime !== undefined) day.sleep.bedtime = body.bedtime;
+        if (body.wake !== undefined) day.sleep.wake = body.wake;
+        if (body.meds !== undefined) day.sleep.meds = body.meds;
+        return HttpResponse.json(day.sleep);
+      }
+      return HttpResponse.json({ detail: "not found" }, { status: 404 });
+    }),
+
+    http.delete(`${API_BASE}/sleep-logs/:id/`, ({ params }) => {
+      for (const day of state.days) {
+        if (day.sleep?.id === params.id) {
+          day.sleep = null;
           return new HttpResponse(null, { status: 204 });
         }
       }
