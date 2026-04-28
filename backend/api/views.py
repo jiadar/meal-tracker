@@ -102,6 +102,13 @@ def month_summary_view(request, year, month):
     return Response(data)
 
 
+class AuthConfigView(APIView):
+    permission_classes = [permissions.AllowAny]
+
+    def get(self, request):
+        return Response({"allow_registration": settings.ALLOW_REGISTRATION})
+
+
 class RegisterView(APIView):
     permission_classes = [permissions.AllowAny]
     throttle_classes = [ScopedRateThrottle]

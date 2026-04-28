@@ -32,6 +32,7 @@ urlpatterns = [
         views.month_summary_view,
         name="month-summary",
     ),
+    path("auth/config/", views.AuthConfigView.as_view(), name="auth-config"),
     path("auth/register/", views.RegisterView.as_view(), name="register"),
     path("auth/login/", views.LoginView.as_view(), name="login"),
     path("auth/refresh/", TokenRefreshView.as_view(), name="token-refresh"),
