@@ -1,8 +1,9 @@
 import pytest
 from django.core import mail
+from django.test import override_settings
 
 from api.models import User, UserProfile
-from api.tests.conftest import error_fields
+from api.tests.conftest import error_codes, error_fields
 
 
 @pytest.mark.django_db
@@ -84,3 +85,27 @@ def test_register_invalid_email_rejected(api_client):
     )
     assert resp.status_code == 400
     assert "email" in error_fields(resp)
+
+
+@pytest.mark.django_db
+@override_settings(ALLOW_REGISTRATION=False)
+def test_register_disabled_returns_403(api_client):
+    resp = api_client.post(
+        "/api/v1/auth/register/",
+        {"email": "blocked@example.com", "password": "StrongPass!123"},
+        format="json",
+    )
+    assert resp.status_code == 403
+    assert "registration_disabled" in error_codes(resp)
+    assert User.objects.filter(email="blocked@example.com").count() == 0
+
+
+@pytest.mark.django_db
+@override_settings(ALLOW_REGISTRATION=False)
+def test_register_disabled_does_not_send_email(api_client):
+    api_client.post(
+        "/api/v1/auth/register/",
+        {"email": "blocked@example.com", "password": "StrongPass!123"},
+        format="json",
+    )
+    assert len(mail.outbox) == 0

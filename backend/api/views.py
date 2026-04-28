@@ -1,3 +1,4 @@
+from django.conf import settings
 from django.db import transaction
 from django.shortcuts import render
 from rest_framework import generics, permissions, status, viewsets
@@ -107,6 +108,11 @@ class RegisterView(APIView):
     throttle_scope = "register"
 
     def post(self, request):
+        if not settings.ALLOW_REGISTRATION:
+            return Response(
+                {"errors": [{"code": "registration_disabled", "field": None, "message": "Registration is disabled."}]},
+                status=status.HTTP_403_FORBIDDEN,
+            )
         serializer = RegisterSerializer(data=request.data)
         serializer.is_valid(raise_exception=True)
         user = serializer.save()
