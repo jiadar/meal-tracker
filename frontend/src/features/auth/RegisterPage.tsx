@@ -2,9 +2,11 @@ import {
   Anchor,
   Button,
   Container,
+  Loader,
   Paper,
   PasswordInput,
   Stack,
+  Text,
   TextInput,
   Title,
 } from "@mantine/core";
@@ -13,7 +15,7 @@ import { zodResolver } from "mantine-form-zod-resolver";
 import { notifications } from "@mantine/notifications";
 import { Link, useNavigate } from "react-router";
 import { z } from "zod";
-import { useRegister } from "./api";
+import { useAuthConfig, useRegister } from "./api";
 import { ApiError } from "@/lib/apiClient";
 
 const schema = z.object({
@@ -25,6 +27,7 @@ const schema = z.object({
 export function RegisterPage() {
   const register = useRegister();
   const navigate = useNavigate();
+  const { data: authConfig, isLoading } = useAuthConfig();
   const form = useForm({
     initialValues: { email: "", password: "", display_name: "" },
     validate: zodResolver(schema),
@@ -36,6 +39,10 @@ export function RegisterPage() {
       navigate("/verify-pending");
     } catch (err) {
       if (err instanceof ApiError) {
+        if (err.errors[0]?.code === "registration_disabled") {
+          notifications.show({ color: "red", message: "Registration is currently disabled." });
+          return;
+        }
         for (const e of err.errors) {
           if (e.field && form.values[e.field as keyof typeof form.values] !== undefined) {
             form.setFieldError(e.field as keyof typeof form.values, e.message);
@@ -53,31 +60,42 @@ export function RegisterPage() {
         Create an account
       </Title>
       <Paper withBorder p="xl" radius="md">
-        <form onSubmit={onSubmit}>
+        {isLoading ? (
+          <Loader />
+        ) : authConfig?.allow_registration === true ? (
+          <form onSubmit={onSubmit}>
+            <Stack>
+              <TextInput
+                label="Display name (optional)"
+                {...form.getInputProps("display_name")}
+              />
+              <TextInput
+                label="Email"
+                required
+                {...form.getInputProps("email")}
+              />
+              <PasswordInput
+                label="Password"
+                required
+                description="At least 8 characters"
+                {...form.getInputProps("password")}
+              />
+              <Button type="submit" loading={register.isPending}>
+                Create account
+              </Button>
+              <Anchor component={Link} to="/login" ta="center" size="sm">
+                Already have an account? Sign in
+              </Anchor>
+            </Stack>
+          </form>
+        ) : (
           <Stack>
-            <TextInput
-              label="Display name (optional)"
-              {...form.getInputProps("display_name")}
-            />
-            <TextInput
-              label="Email"
-              required
-              {...form.getInputProps("email")}
-            />
-            <PasswordInput
-              label="Password"
-              required
-              description="At least 8 characters"
-              {...form.getInputProps("password")}
-            />
-            <Button type="submit" loading={register.isPending}>
-              Create account
-            </Button>
+            <Text>Registration is currently disabled.</Text>
             <Anchor component={Link} to="/login" ta="center" size="sm">
-              Already have an account? Sign in
+              Sign in
             </Anchor>
           </Stack>
-        </form>
+        )}
       </Paper>
     </Container>
   );

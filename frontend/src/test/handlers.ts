@@ -143,6 +143,7 @@ export interface TestState {
   nextIngredientId: number;
   recipes: RecipeFixture[];
   user: UserFixture;
+  allowRegistration: boolean;
 }
 
 export interface UserProfileFixture {
@@ -375,6 +376,7 @@ export function createTestState(overrides: Partial<TestState> = {}): TestState {
     nextIngredientId: 1,
     recipes: [],
     user: defaultUser(),
+    allowRegistration: true,
     ...overrides,
   };
 }
@@ -873,6 +875,10 @@ export function buildHandlers(state: TestState) {
       state.weightGoals.splice(idx, 1);
       return new HttpResponse(null, { status: 204 });
     }),
+
+    http.get(`${API_BASE}/auth/config/`, () =>
+      HttpResponse.json({ allow_registration: state.allowRegistration }),
+    ),
 
     http.get(`${API_BASE}/targets/`, () => HttpResponse.json(state.targets)),
 

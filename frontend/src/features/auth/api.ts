@@ -117,3 +117,17 @@ export function useRequestPasswordReset() {
       apiPost("/auth/password/reset/", vars),
   });
 }
+
+interface AuthConfig {
+  allow_registration: boolean;
+}
+
+const AUTH_CONFIG_KEY = ["auth-config"];
+
+export function useAuthConfig() {
+  return useQuery({
+    queryKey: AUTH_CONFIG_KEY,
+    queryFn: () => apiGet<AuthConfig>("/auth/config/"),
+    staleTime: 5 * 60 * 1000,
+  });
+}
