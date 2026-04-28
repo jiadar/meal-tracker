@@ -13,8 +13,13 @@ RUN apt-get update \
         build-essential \
         libpq-dev \
         curl \
+        ca-certificates \
+        gnupg \
+    && curl -fsSL https://deb.nodesource.com/setup_22.x | bash - \
+    && apt-get install -y --no-install-recommends nodejs \
     && rm -rf /var/lib/apt/lists/* \
-    && pip install --no-cache-dir "poetry==${POETRY_VERSION}"
+    && pip install --no-cache-dir "poetry==${POETRY_VERSION}" \
+    && npm install -g @anthropic-ai/claude-code
 
 COPY pyproject.toml poetry.lock ./
 

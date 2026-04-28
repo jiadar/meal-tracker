@@ -8,6 +8,7 @@ from rest_framework.routers import DefaultRouter
 from rest_framework_simplejwt.views import TokenRefreshView
 
 from . import views
+from .chat import views as chat_views
 
 router = DefaultRouter()
 router.register("foods", views.FoodViewSet, basename="food")
@@ -31,6 +32,7 @@ urlpatterns = [
         views.month_summary_view,
         name="month-summary",
     ),
+    path("auth/config/", views.AuthConfigView.as_view(), name="auth-config"),
     path("auth/register/", views.RegisterView.as_view(), name="register"),
     path("auth/login/", views.LoginView.as_view(), name="login"),
     path("auth/refresh/", TokenRefreshView.as_view(), name="token-refresh"),
@@ -56,5 +58,6 @@ urlpatterns = [
         name="verify-email-resend",
     ),
     path("targets/", views.UserTargetsView.as_view(), name="targets"),
+    path("chat/", chat_views.chat_view, name="chat"),
     path("", include(router.urls)),
 ]

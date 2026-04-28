@@ -22,6 +22,8 @@ DEBUG = os.environ.get("DJANGO_DEBUG", "True") == "True"
 
 ALLOWED_HOSTS = os.environ.get("DJANGO_ALLOWED_HOSTS", "localhost,127.0.0.1").split(",")
 
+ALLOW_REGISTRATION = os.environ.get("ALLOW_REGISTRATION", "True") == "True"
+
 
 INSTALLED_APPS = [
     "django.contrib.admin",
@@ -129,6 +131,7 @@ REST_FRAMEWORK = {
         "login": "10/min",
         "password_reset": "5/hour",
         "email_verify_resend": "5/hour",
+        "chat": "60/hour",
     },
     "DEFAULT_PAGINATION_CLASS": "rest_framework.pagination.PageNumberPagination",
     "PAGE_SIZE": 50,

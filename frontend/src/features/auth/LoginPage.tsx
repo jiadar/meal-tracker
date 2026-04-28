@@ -13,7 +13,7 @@ import { zodResolver } from "mantine-form-zod-resolver";
 import { notifications } from "@mantine/notifications";
 import { Link, useNavigate } from "react-router";
 import { z } from "zod";
-import { useLogin } from "./api";
+import { useAuthConfig, useLogin } from "./api";
 import { ApiError } from "@/lib/apiClient";
 
 const schema = z.object({
@@ -24,6 +24,7 @@ const schema = z.object({
 export function LoginPage() {
   const login = useLogin();
   const navigate = useNavigate();
+  const { data: authConfig } = useAuthConfig();
   const form = useForm({
     initialValues: { email: "", password: "" },
     validate: zodResolver(schema),
@@ -63,9 +64,11 @@ export function LoginPage() {
             <Button type="submit" loading={login.isPending}>
               Sign in
             </Button>
-            <Anchor component={Link} to="/register" ta="center" size="sm">
-              Create an account
-            </Anchor>
+            {authConfig?.allow_registration === true && (
+              <Anchor component={Link} to="/register" ta="center" size="sm">
+                Create an account
+              </Anchor>
+            )}
             <Anchor component={Link} to="/reset-password" ta="center" size="sm" c="dimmed">
               Forgot password?
             </Anchor>

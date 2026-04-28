@@ -30,6 +30,7 @@ def _test_settings(settings):
             "login": None,
             "password_reset": None,
             "email_verify_resend": None,
+            "chat": None,
         },
     }
     settings.EMAIL_BACKEND = "django.core.mail.backends.locmem.EmailBackend"

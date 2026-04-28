@@ -1,3 +1,4 @@
+from django.conf import settings
 from django.db import transaction
 from django.shortcuts import render
 from rest_framework import generics, permissions, status, viewsets
@@ -101,12 +102,24 @@ def month_summary_view(request, year, month):
     return Response(data)
 
 
+class AuthConfigView(APIView):
+    permission_classes = [permissions.AllowAny]
+
+    def get(self, request):
+        return Response({"allow_registration": settings.ALLOW_REGISTRATION})
+
+
 class RegisterView(APIView):
     permission_classes = [permissions.AllowAny]
     throttle_classes = [ScopedRateThrottle]
     throttle_scope = "register"
 
     def post(self, request):
+        if not settings.ALLOW_REGISTRATION:
+            return Response(
+                {"errors": [{"code": "registration_disabled", "field": None, "message": "Registration is disabled."}]},
+                status=status.HTTP_403_FORBIDDEN,
+            )
         serializer = RegisterSerializer(data=request.data)
         serializer.is_valid(raise_exception=True)
         user = serializer.save()

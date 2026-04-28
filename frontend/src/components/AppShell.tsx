@@ -6,6 +6,7 @@ import {
   IconCalendarStats,
   IconChartBar,
   IconDownload,
+  IconMessageChatbot,
   IconLogout,
   IconMoon,
   IconSalad,
@@ -19,6 +20,7 @@ import { useExport } from "@/features/export/useExport";
 
 const NAV = [
   { to: "/", label: "Day Detail", icon: IconCalendar },
+  { to: "/chat", label: "Chat", icon: IconMessageChatbot },
   { to: "/month", label: "Month", icon: IconCalendarStats },
   { to: "/foods", label: "Foods", icon: IconSalad },
   { to: "/recipes", label: "Recipes", icon: IconChartBar },
